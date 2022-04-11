@@ -6,6 +6,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://recap.uni-trier.de`,
   },
   plugins: [
+    "gatsby-plugin-netlify",
     "gatsby-plugin-image",
     "gatsby-transformer-yaml",
     "gatsby-remark-images",
