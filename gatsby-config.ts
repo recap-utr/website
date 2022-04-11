@@ -9,7 +9,6 @@ const config: GatsbyConfig = {
     "gatsby-plugin-netlify",
     "gatsby-plugin-image",
     "gatsby-transformer-yaml",
-    "gatsby-remark-images",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     // "gatsby-plugin-typescript",
