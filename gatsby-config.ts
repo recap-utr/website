@@ -1,30 +1,49 @@
-import type { GatsbyConfig } from "gatsby";
+import { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `ReCAP`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `ReCAP Trier University`,
+    siteUrl: `https://recap.uni-trier.de`,
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-transformer-yaml",
+    "gatsby-remark-images",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    // "gatsby-plugin-typescript",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "./static/logo.png",
+      },
     },
-    __key: "images"
-  }, {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaults: {
+          formats: ["auto"],
+          quality: 50,
+        },
+      },
     },
-    __key: "pages"
-  }]
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "data",
+        path: "./src/data/",
+      },
+    },
+    "@chakra-ui/gatsby-plugin",
+  ],
 };
 
 export default config;

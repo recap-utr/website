@@ -1,0 +1,59 @@
+- name: Mirko Lenz
+  email: info@mirko-lenz.de
+  affiliation: Trier University
+  avatar: ../images/lenz-uni-trier.jpg
+
+- name: Lorik Dumani
+  email: dumani@uni-trier.de
+  affiliation: Trier University
+  avatar: ../images/placeholder.jpg
+
+- name: Philipp Heinrich
+  email: philipp.heinrich@fau.de
+  affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  avatar: ../images/placeholder.jpg
+
+- name: Nathan Dykes
+  email: nathan.dykes@fau.de
+  affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  avatar: ../images/placeholder.jpg
+
+- name: Merlin Humml
+  email: merlin.humml@fau.de
+  affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  avatar: ../images/placeholder.jpg
+
+- name: Alexander Bondarenko
+  email: alexander.bondarenko@informatik.uni-halle.de
+  affiliation: Martin Luther University Halle-Wittenberg
+  avatar: ../images/placeholder.jpg
+
+- name: Shahbaz Syed
+  email: shahbaz.syed@uni-leipzig.de
+  affiliation: Leipzig University
+  avatar: ../images/placeholder.jpg
+
+- name: Prof. Dr. Adrian Ulges
+  email: adrian.ulges@hs-rm.de
+  affiliation: RheinMain University of Applied Sciences
+  avatar: ../images/placeholder.jpg
+
+- name: Prof. Dr. Stephanie Evert
+  email: stephanie.evert@fau.de
+  affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  avatar: ../images/placeholder.jpg
+
+- name: Prof. Dr. Lutz Schröder
+  email: lutz.schroeder@fau.de
+  affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
+  avatar: ../images/placeholder.jpg
+
+- name: Prof. Dr. Achim Rettinger
+  email: rettinger@uni-trier.de
+  affiliation: Trier University
+  avatar: ../images/placeholder.jpg
+
+- name: Prof. Dr. Martin Vogt
+  email: vogt@hochschule-trier.de
+  affiliation: Trier University of Applied Sciences
+  avatar: ../images/placeholder.jpg

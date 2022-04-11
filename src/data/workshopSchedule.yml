@@ -1,0 +1,27 @@
+- start: "09:00"
+  end: "09:10"
+  event: Opening
+- start: "09:10"
+  end: "10:40"
+  event: Session 1
+- start: "10:40"
+  end: "11:00"
+  event: Break
+- start: "11:00"
+  end: "12:00"
+  event: Keynote
+- start: "12:00"
+  end: "13:00"
+  event: Break
+- start: "13:00"
+  end: "14:30"
+  event: Session 2
+- start: "14:30"
+  end: "14:50"
+  event: Session 3
+- start: "16:20"
+  end: "16:30"
+  event: Break
+- start: "16:30"
+  end: "18:00"
+  event: Social event with poster session
