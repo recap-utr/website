@@ -1,4 +1,4 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Center, SimpleGrid } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
@@ -76,16 +76,17 @@ const Page: React.FC<Props> = ({ data }) => (
     </Ul>
 
     <H2>Keynote by Prof. Dr. Iryna Gurevych</H2>
-    <SimpleGrid columns={2} spacing={5}>
-      <Box>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+      <Center>
         <StaticImage
-          aspectRatio={1}
+          width={300}
+          height={300}
           transformOptions={{ cropFocus: "centre" }}
           imgStyle={{ borderRadius: 9999 }}
           src="../images/gurevych.jpg"
           alt="Prof. Dr. Iryna Gurevych"
         />
-      </Box>
+      </Center>
       {/* prettier-ignore */}
       <P>
         Dolor minim nisi mollit sit incididunt labore enim deserunt fugiat consequat qui nisi. Est eiusmod dolor deserunt qui culpa cillum nisi dolor adipisicing duis. Laborum exercitation fugiat laboris exercitation minim nostrud in eu consequat. Mollit nisi nostrud consectetur ipsum ex ex anim elit. Occaecat irure qui ea nostrud excepteur velit anim nulla proident consectetur qui. Pariatur aute duis laborum aute irure culpa aliqua eu laboris et est officia anim. Dolor cupidatat ea ullamco ipsum veniam. Sunt sint enim velit cillum irure ad et ipsum laborum deserunt. Dolor sunt reprehenderit aliqua minim velit aliqua. Ullamco qui laborum officia sint non pariatur sint.
