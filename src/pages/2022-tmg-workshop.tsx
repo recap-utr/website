@@ -82,7 +82,6 @@ const Page: React.FC<Props> = ({ data }) => (
           width={300}
           height={300}
           transformOptions={{ cropFocus: "centre" }}
-          imgStyle={{ borderRadius: 9999 }}
           src="../images/gurevych.jpg"
           alt="Prof. Dr. Iryna Gurevych"
         />
