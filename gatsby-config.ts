@@ -1,6 +1,7 @@
 import { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  trailingSlash: "always",
   siteMetadata: {
     title: `ReCAP Trier University`,
     siteUrl: `https://recap.uni-trier.de`,

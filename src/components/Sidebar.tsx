@@ -33,6 +33,8 @@ interface StaticQuery {
   };
 }
 
+const withSlash = (url: string) => (url.endsWith("/") ? url : `${url}/`);
+
 const SidebarContent: React.FC<{
   onClick: () => void;
 }> = ({ onClick }) => {
@@ -69,7 +71,7 @@ const SidebarContent: React.FC<{
             href={entry.url}
           >
             <Button
-              isActive={currentSlug === entry.url}
+              isActive={withSlash(currentSlug) === withSlash(entry.url)}
               isFullWidth
               justifyContent="left"
               leftIcon={<Icon name={entry.icon} />}
