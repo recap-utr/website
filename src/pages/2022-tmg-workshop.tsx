@@ -94,6 +94,7 @@ const Page: React.FC<Props> = ({ data }) => (
           aspectRatio={1}
           transformOptions={{ cropFocus: "centre" }}
           src="../images/gurevych-ukp.jpg"
+          imgStyle={{ borderRadius: 9999 }}
           alt="Prof. Dr. Iryna Gurevych"
         />
       </Box>

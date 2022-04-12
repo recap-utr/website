@@ -24,7 +24,11 @@ const Profile: React.FC<Props> = ({
       <SimpleGrid columns={2} gap={5}>
         {avatarImage && (
           <Box>
-            <GatsbyImage image={avatarImage} alt={name} />
+            <GatsbyImage
+              imgStyle={{ borderRadius: 9999 }}
+              image={avatarImage}
+              alt={name}
+            />
           </Box>
         )}
         <Stack direction="column">
