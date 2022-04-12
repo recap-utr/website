@@ -1,11 +1,9 @@
 import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
-  Text,
 } from "@chakra-ui/react";
 import { Link as GatsbyLink } from "gatsby";
 import React from "react";
-import Icon from "./Icon";
 
 const isExternal = (url: string) => {
   try {
@@ -21,12 +19,9 @@ const Link: React.FC<{
 }> = ({ href, props, children }) => {
   if (isExternal(href)) {
     return (
-      <Text>
-        <Icon name="arrow-up-right-from-square" />{" "}
-        <ChakraLink {...props} href={href} isExternal>
-          {children}
-        </ChakraLink>
-      </Text>
+      <ChakraLink {...props} href={href} isExternal>
+        {children}
+      </ChakraLink>
     );
   }
 
