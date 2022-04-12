@@ -1,26 +1,22 @@
-import { Box, Text, Wrap } from "@chakra-ui/react";
+import { Center, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import Link from "./Link";
 
 const Footer: React.FC<{}> = () => {
   return (
-    <Box as="footer" gridArea="footer" bg="primary.600" pt={5} pb={5}>
-      <Wrap spacing={5} justify="center">
+    <Center as="footer" gridArea="footer" bg="primary.600" pt={5} pb={5}>
+      <Stack
+        spacing={{ base: 1, md: 5 }}
+        direction={{ base: "column", md: "row" }}
+        textAlign="center"
+      >
         <Text>&copy; {new Date().getFullYear()} Trier University</Text>
-        <Link
-          chakraProps={{ isExternal: true }}
-          href="https://www.uni-trier.de/impressum/"
-        >
-          Imprint
-        </Link>
-        <Link
-          chakraProps={{ isExternal: true }}
-          href="https://www.uni-trier.de/datenschutzerklaerung/"
-        >
+        <Link href="https://www.uni-trier.de/impressum/">Imprint</Link>
+        <Link href="https://www.uni-trier.de/datenschutzerklaerung/">
           Privacy Policy
         </Link>
-      </Wrap>
-    </Box>
+      </Stack>
+    </Center>
   );
 };
 
