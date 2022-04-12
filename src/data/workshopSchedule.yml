@@ -18,6 +18,9 @@
   event: Session 2
 - start: "14:30"
   end: "14:50"
+  event: Break
+- start: "14:50"
+  end: "16:20"
   event: Session 3
 - start: "16:20"
   end: "16:30"
