@@ -14,6 +14,7 @@ import { IconName } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "@reach/router";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import logo from "../assets/logo.svg";
 import Icon from "./Icon";
 import Link from "./Link";
 
@@ -54,7 +55,7 @@ const SidebarContent: React.FC<{
       <Img
         background="white"
         borderRadius={9999}
-        src="/logo.svg"
+        src={logo}
         alt="Logo of the project"
       />
       <Stack position="relative">
