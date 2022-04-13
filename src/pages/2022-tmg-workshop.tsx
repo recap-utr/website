@@ -1,9 +1,8 @@
-import { Center, SimpleGrid, Stack, Wrap } from "@chakra-ui/react";
+import { Center, SimpleGrid, Wrap } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, Li, P, Ul } from "../components/BodyComponents";
-import ButtonLink from "../components/ButtonLink";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 import Table from "../components/Table";
@@ -103,11 +102,14 @@ const Page: React.FC<Props> = ({ data }) => (
     {/* <H3>Submission Information</H3> */}
     {/* prettier-ignore */}
     <P>
+      Details regarding the submission procedure have yet to be determined and will be posted on this website as soon as possible.
+    </P>
+    {/* <P>
       The submission of the papers should be in accordance to the Springer LNCS style and have to be submitted via EasyChair.
       The maximum number of pages is 12 excluding references.
       The workshop is running a single-blind review process.
-    </P>
-    <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
+    </P> */}
+    {/* <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
       <ButtonLink
         color="blue"
         icon="circle-check"
@@ -127,7 +129,7 @@ const Page: React.FC<Props> = ({ data }) => (
       >
         Springer LNCS Template
       </ButtonLink>
-    </Stack>
+    </Stack> */}
 
     <H2>Keynote by Prof. Dr. Iryna Gurevych</H2>
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
@@ -142,7 +144,8 @@ const Page: React.FC<Props> = ({ data }) => (
       </Center>
       {/* prettier-ignore */}
       <P>
-        Dolor minim nisi mollit sit incididunt labore enim deserunt fugiat consequat qui nisi. Est eiusmod dolor deserunt qui culpa cillum nisi dolor adipisicing duis. Laborum exercitation fugiat laboris exercitation minim nostrud in eu consequat. Mollit nisi nostrud consectetur ipsum ex ex anim elit. Occaecat irure qui ea nostrud excepteur velit anim nulla proident consectetur qui. Pariatur aute duis laborum aute irure culpa aliqua eu laboris et est officia anim. Dolor cupidatat ea ullamco ipsum veniam. Sunt sint enim velit cillum irure ad et ipsum laborum deserunt. Dolor sunt reprehenderit aliqua minim velit aliqua. Ullamco qui laborum officia sint non pariatur sint.
+        We are please to announce that Prof. Dr. Iryna Gurevych from the Ubiquitous Knowledge Processing (UKP) Lab at the Technical University of Darmstadt will hold a keynote as part of our workshop.
+        A concrete topic is yet to be determined and will be posted on this website as soon as possible.
       </P>
     </SimpleGrid>
 
