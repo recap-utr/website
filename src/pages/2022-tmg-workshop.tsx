@@ -168,7 +168,7 @@ export const query = graphql`
       nodes {
         avatar {
           childImageSharp {
-            gatsbyImageData(aspectRatio: 1)
+            gatsbyImageData(width: 300, height: 300)
           }
         }
         affiliation
