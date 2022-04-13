@@ -25,7 +25,7 @@ const config: GatsbyConfig = {
         defaults: {
           formats: ["auto", "webp"],
           placeholder: "blurred",
-          quality: 50,
+          quality: 90,
         },
       },
     },
