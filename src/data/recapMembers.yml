@@ -1,0 +1,15 @@
+- name: Prof. Dr. Ralph Bergmann
+  email: bergmann@uni-trier.de
+  avatar: ../images/bergmann.jpg
+
+- name: Prof. Dr. Ralf Schenkel
+  email: schenkel@uni-trier.de
+  avatar: ../images/schenkel.jpg
+
+- name: Mirko Lenz
+  email: info@mirko-lenz.de
+  avatar: ../images/lenz.jpg
+
+- name: Lorik Dumani
+  email: dumani@uni-trier.de
+  avatar: ../images/dumani.jpg
