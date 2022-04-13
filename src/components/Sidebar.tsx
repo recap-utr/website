@@ -1,6 +1,8 @@
 import {
   Box,
   Button,
+  Center,
+  Circle,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -54,12 +56,11 @@ const SidebarContent: React.FC<{
 
   return (
     <Stack spacing={5} position="relative">
-      <Img
-        background="white"
-        borderRadius={9999}
-        src={logo}
-        alt="Logo of the project"
-      />
+      <Center>
+        <Circle size={125} background="white" p={2}>
+          <Img src={logo} alt="Logo of the project" />
+        </Circle>
+      </Center>
       <Stack position="relative">
         {entries.nodes.map((entry, key) => (
           <Link
