@@ -1,6 +1,6 @@
 import { Center, SimpleGrid, Stack, Wrap } from "@chakra-ui/react";
 import { graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, Li, P, Ul } from "../components/BodyComponents";
 import ButtonLink from "../components/ButtonLink";
@@ -10,7 +10,23 @@ import Table from "../components/Table";
 import Tag from "../components/Tag";
 
 interface Props {
-  data: any;
+  data: {
+    members: {
+      nodes: Array<{
+        avatar: ImageDataLike;
+        affiliation: string;
+        email: string;
+        name: string;
+      }>;
+    };
+    schedule: {
+      nodes: Array<{
+        start: string;
+        end: string;
+        event: string;
+      }>;
+    };
+  };
 }
 
 // const headers = {
