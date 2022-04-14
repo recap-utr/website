@@ -1,4 +1,4 @@
-import { Center, SimpleGrid, Wrap } from "@chakra-ui/react";
+import { Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
@@ -40,7 +40,10 @@ interface Props {
 // }
 
 const Page: React.FC<Props> = ({ data }) => (
-  <Layout title="Workshop on Text Mining and Generation (TMG) at KI-2022">
+  <Layout
+    title="Workshop on Text Mining and Generation (TMG) at KI-2022"
+    description="One-day workshop co-located with KI-2022 concerned with transforming text data between structured and unstructured representations."
+  >
     <Wrap justify="center" mt={10} mb={10} spacingX={5} spacingY={2}>
       <WrapItem>
         <Tag icon="calendar-alt">September 19 or 20, 2022</Tag>

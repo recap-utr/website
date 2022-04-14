@@ -25,7 +25,10 @@ interface Props {
 }
 
 const Page: React.FC<Props> = ({ data }) => (
-  <Layout title="ReCAP Trier University">
+  <Layout
+    title="ReCAP Trier University"
+    description="Research project at Trier University that is funded by DFG and concerned with building an argumentation machine."
+  >
     {/* prettier-ignore */}
     <P>
       The ReCaP project follows the vision of future argumentation engines that support scientists, journalistic writers as well as human decision makers to get a comprehensive overview of current arguments and opinions on a given topic as well as to develop personal, informed opinions.

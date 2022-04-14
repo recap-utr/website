@@ -11,15 +11,16 @@ library.add(fas);
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const Layout: React.FC<Props> = ({ title, children }) => {
+const Layout: React.FC<Props> = ({ title, description, children }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
   return (
     <>
-      <Seo title={title} />
+      <Seo title={title} description={description} />
       <Grid templateAreas="'header' 'main' 'footer'" gap={5}>
         <Header onShowSidebar={toggleSidebar} />
         <Container maxW="container.lg" gridArea="main">
