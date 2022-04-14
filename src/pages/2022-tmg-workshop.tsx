@@ -42,12 +42,20 @@ interface Props {
 const Page: React.FC<Props> = ({ data }) => (
   <Layout title="Workshop on Text Mining and Generation (TMG) at KI-2022">
     <Wrap justify="center" mt={10} mb={10} spacingX={5} spacingY={2}>
-      <Tag icon="calendar-alt">September 19 or 20, 2022</Tag>
-      <Tag icon="clock">One-day workshop</Tag>
-      <Tag icon="info-circle">
-        Co-located with <A href="https://ki2022.gi.de/">KI-2022</A>
-      </Tag>
-      <Tag icon="location-dot">Trier, Germany</Tag>
+      <WrapItem>
+        <Tag icon="calendar-alt">September 19 or 20, 2022</Tag>
+      </WrapItem>
+      <WrapItem>
+        <Tag icon="clock">One-day workshop</Tag>
+      </WrapItem>
+      <WrapItem>
+        <Tag icon="info-circle">
+          Co-located with <A href="https://ki2022.gi.de/">KI-2022</A>
+        </Tag>
+      </WrapItem>
+      <WrapItem>
+        <Tag icon="location-dot">Trier, Germany</Tag>
+      </WrapItem>
     </Wrap>
     {/* prettier-ignore */}
     <P>
