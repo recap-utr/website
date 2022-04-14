@@ -14,7 +14,7 @@ interface Props {
 
 const Page: React.FC<Props> = ({ data }) => (
   <Layout title="Publications related to ReCAP">
-    <Stack spacing={10}>
+    <Stack spacing={7} mt={5}>
       {data.allCitation.nodes.map((citation) => (
         <Citation {...citation} key={citation.citation_label} />
       ))}
