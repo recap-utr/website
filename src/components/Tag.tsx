@@ -9,7 +9,12 @@ interface Props {
 
 const Tag: React.FC<Props> = ({ icon, children }) => (
   <ChakraTag size="lg">
-    {icon && <TagLeftIcon as={() => <Icon name={icon} />} />}
+    {icon && (
+      <>
+        <TagLeftIcon as={() => <Icon name={icon} />} />
+        &nbsp;&nbsp;
+      </>
+    )}
     <TagLabel>{children}</TagLabel>
   </ChakraTag>
 );
