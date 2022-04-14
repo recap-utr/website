@@ -144,7 +144,7 @@ const Page: React.FC<Props> = ({ data }) => (
       </Center>
       {/* prettier-ignore */}
       <P>
-        We are please to announce that Prof. Dr. Iryna Gurevych from the Ubiquitous Knowledge Processing (UKP) Lab at the Technical University of Darmstadt will hold a keynote as part of our workshop.
+        We are pleased to announce that Prof. Dr. Iryna Gurevych from the Ubiquitous Knowledge Processing (UKP) Lab at the Technical University of Darmstadt will hold a keynote as part of our workshop.
         A concrete topic is yet to be determined and will be posted on this website as soon as possible.
       </P>
     </SimpleGrid>
