@@ -179,7 +179,11 @@ export const query = graphql`
       nodes {
         avatar {
           childImageSharp {
-            gatsbyImageData(width: 300, height: 300)
+            gatsbyImageData(
+              width: 300
+              height: 300
+              transformOptions: { cropFocus: CENTER }
+            )
           }
         }
         affiliation
