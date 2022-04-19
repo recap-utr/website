@@ -12,7 +12,7 @@ const config: GatsbyConfig = {
     "gatsby-transformer-yaml",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    // "gatsby-plugin-typescript",
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -42,6 +42,13 @@ const config: GatsbyConfig = {
       options: {
         name: "data",
         path: "./src/data/",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: "./src/content/",
       },
     },
     "@chakra-ui/gatsby-plugin",
