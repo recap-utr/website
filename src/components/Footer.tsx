@@ -11,10 +11,12 @@ const Footer: React.FC<{}> = () => {
         textAlign="center"
       >
         <Text>&copy; {new Date().getFullYear()} Trier University</Text>
-        <Link href="https://www.uni-trier.de/impressum/">Imprint</Link>
+        <Link href="/imprint/">Imprint</Link>
+        <Link href="/privacy-policy/">Privacy Policy</Link>
+        {/* <Link href="https://www.uni-trier.de/impressum/">Imprint</Link>
         <Link href="https://www.uni-trier.de/datenschutzerklaerung/">
           Privacy Policy
-        </Link>
+        </Link> */}
       </Stack>
     </Center>
   );
