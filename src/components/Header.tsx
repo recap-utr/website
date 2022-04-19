@@ -8,7 +8,7 @@ interface Props {
 }
 
 const HeaderContent: React.FC<{}> = () => (
-  <Link href="/" chakraProps={{ _hover: {} }}>
+  <Link href="/" props={{ _hover: {} }}>
     <Heading as="span" size="lg">
       ReCAP Trier University
     </Heading>
