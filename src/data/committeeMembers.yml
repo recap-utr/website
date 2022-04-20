@@ -26,7 +26,7 @@
 - name: Alexander Bondarenko
   email: alexander.bondarenko@informatik.uni-halle.de
   affiliation: Martin Luther University Halle-Wittenberg
-  avatar: ../images/bondarenko.png
+  avatar: ../images/bondarenko.jpg
 
 - name: Shahbaz Syed
   email: shahbaz.syed@uni-leipzig.de
@@ -56,4 +56,4 @@
 - name: Prof. Dr. Martin Vogt
   email: vogt@hochschule-trier.de
   affiliation: Trier University of Applied Sciences
-  avatar: ../images/placeholder.jpg
+  avatar: ../images/vogt.jpg
