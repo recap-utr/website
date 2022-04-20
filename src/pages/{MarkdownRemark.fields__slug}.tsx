@@ -20,6 +20,9 @@ const processor = unified().use(rehypeReact, {
     ul: body.Ul,
     ol: body.Ol,
     hr: body.Hr,
+    i: body.I,
+    em: body.Em,
+    strong: body.Strong,
   } as any,
 });
 
