@@ -2,7 +2,7 @@ import { Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { A, H2, Li, P, Ul } from "../components/BodyComponents";
+import { A, H2, H3, Li, P, Ul } from "../components/BodyComponents";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 import Table from "../components/Table";
@@ -143,11 +143,11 @@ const Page: React.FC<Props> = ({ data }) => (
     </Stack> */}
 
     <H2>Keynote by Prof. Dr. Iryna Gurevych</H2>
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
       <Center>
         <StaticImage
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           transformOptions={{ cropFocus: "centre" }}
           src="../images/gurevych.jpg"
           alt="Prof. Dr. Iryna Gurevych"
@@ -155,10 +155,28 @@ const Page: React.FC<Props> = ({ data }) => (
       </Center>
       {/* prettier-ignore */}
       <P>
-        We are pleased to announce that Prof. Dr. Iryna Gurevych from the Ubiquitous Knowledge Processing (UKP) Lab at the Technical University of Darmstadt will hold a keynote as part of our workshop.
-        A concrete topic is yet to be determined and will be posted on this website as soon as possible.
+        Iryna Gurevych (PhD 2003, U. Duisburg-Essen, Germany) is professor of Computer Science and director of the Ubiquitous Knowledge Processing (UKP) Lab at the Technical University (TU) of Darmstadt in Germany.
+        Her main research interests are in machine learning for large-scale language understanding and text semantics.
+        Iryna's work has received numerous awards.
+        Examples are the ACL fellow award 2020 and the first Hessian LOEWE Distinguished Chair award (2,5 mil. Euro) in 2021.
+        Iryna is co-director of the NLP program within ELLIS, a European network of excellence in machine learning.
+        She is currently the vice-president of the Association of Computational Linguistics.
       </P>
     </SimpleGrid>
+    {/* prettier-ignore */}
+    <H3>Detect—Verify—Communicate: Combating Misinformation with More Realistic NLP</H3>
+    {/* prettier-ignore */}
+    <P>
+        Dealing with misinformation is a grand challenge of the information society directed at equipping the computer users with effective tools for identifying and debunking misinformation.
+        Current Natural Language Processing (NLP) including its fact-checking research fails to meet the expectations of real-life scenarios.
+        In this talk, we show why the past work on fact-checking has not yet led to truly useful tools for managing misinformation, and discuss our ongoing work on more realistic solutions.
+        NLP systems are expensive in terms of financial cost, computation, and manpower needed to create data for the learning process.
+        With that in mind, we are pursuing research on <strong>detection</strong> of emerging misinformation topics to focus human attention on the most harmful, novel examples.
+        Automatic methods for claim <strong>verification</strong> rely on large, high-quality datasets.
+        To this end, we have constructed two corpora for fact checking, considering larger evidence documents and pushing the state of the art closer to the reality of combating misinformation.
+        We further compare the capabilities of automatic, NLP-based approaches to what human fact checkers actually do, uncovering critical research directions for the future.
+        To edify false beliefs, we are collaborating with cognitive scientists and psychologists to automatically detect and respond to attitudes of vaccine hesitancy, encouraging anti-vaxxers to change their minds with effective <strong>communication</strong> strategies.
+      </P>
 
     <H2>Preliminary Schedule</H2>
     <Table
