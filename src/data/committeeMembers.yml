@@ -41,17 +41,17 @@
 - name: Prof. Dr. Stephanie Evert
   email: stephanie.evert@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../images/placeholder.jpg
+  avatar: ../images/evert.jpg
 
 - name: Prof. Dr. Lutz Schröder
   email: lutz.schroeder@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../images/placeholder.jpg
+  avatar: ../images/schroeder.jpg
 
 - name: Prof. Dr. Achim Rettinger
   email: rettinger@uni-trier.de
   affiliation: Trier University
-  avatar: ../images/placeholder.jpg
+  avatar: ../images/rettinger.jpg
 
 - name: Prof. Dr. Martin Vogt
   email: vogt@hochschule-trier.de
