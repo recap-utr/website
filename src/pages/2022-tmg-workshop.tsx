@@ -80,10 +80,10 @@ const Page: React.FC<Props> = ({ data }) => (
       caption="All dates are calculated at 11:59 AoE"
       columns={["Date", "Description"]}
       rows={[
-        ["July 15, 2022", "Submission due"],
+        ["July 15, 2022", "Submission Due"],
         ["August 20, 2022", "Author Notification"],
         ["August 31, 2022", "Camera Ready"],
-        ["September 19 or 20, 2022", "Workshop Date"],
+        ["September 19 or 20, 2022", "Workshop Date (TBD)"],
       ]}
     />
 
