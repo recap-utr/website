@@ -1,8 +1,9 @@
-import { Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react";
+import { Center, SimpleGrid, Stack, Wrap, WrapItem } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, Li, P, Ul } from "../components/BodyComponents";
+import ButtonLink from "../components/ButtonLink";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
 import Table from "../components/Table";
@@ -110,17 +111,23 @@ const Page: React.FC<Props> = ({ data }) => (
       <Li>Summarization.</Li>
       <Li>Workflow mining.</Li>
     </Ul>
-    {/* <H3>Submission Information</H3> */}
+    <H3>Submission Information</H3>
+    {/* <P>
+      Details regarding the submission procedure have yet to be determined and will be posted on this website as soon as possible.
+    </P> */}
     {/* prettier-ignore */}
     <P>
-      Details regarding the submission procedure have yet to be determined and will be posted on this website as soon as possible.
-    </P>
-    {/* <P>
-      The submission of the papers should be in accordance to the Springer LNCS style and have to be submitted via EasyChair.
-      The maximum number of pages is 12 excluding references.
+      The submission of the papers should be in accordance to the GI-LNI style and have to be submitted via EasyChair (please select the track <strong>W6: Text Mining and Generation</strong>).
+      Authors can submit three different types of papers:
+      <Ul>
+        <Li>Full Paper (up to 12 pages)</Li>
+        <Li>Short Paper (up to 6 pages)</Li>
+        <Li>Extended Abstract (up to 3 pages)</Li>
+      </Ul>
+      If selected for publication in the GI-LNI proceedings, authors will later get a possibility to submit an extended version of the paper disregarding their original submission format.
       The workshop is running a single-blind review process.
-    </P> */}
-    {/* <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
+    </P>
+    <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
       <ButtonLink
         color="blue"
         icon="circle-check"
@@ -132,15 +139,12 @@ const Page: React.FC<Props> = ({ data }) => (
         icon="section"
         href="https://ki2022.gi.de/calls/call-for-papers"
       >
-        Guidelines
+        KI-2022 Guidelines
       </ButtonLink>
-      <ButtonLink
-        icon="book"
-        href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines"
-      >
-        Springer LNCS Template
+      <ButtonLink icon="book" href="https://github.com/gi-ev/LNI">
+        GI-LNI Template
       </ButtonLink>
-    </Stack> */}
+    </Stack>
 
     <H2>Keynote by Prof. Dr. Iryna Gurevych</H2>
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
