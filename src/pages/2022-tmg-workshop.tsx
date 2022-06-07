@@ -81,7 +81,7 @@ const Page: React.FC<Props> = ({ data }) => (
       columns={["Date", "Description"]}
       rows={[
         ["July 15, 2022", "Submission Due"],
-        ["August 20, 2022", "Author Notification"],
+        ["August 10, 2022", "Author Notification"],
         ["August 31, 2022", "Camera Ready"],
         ["September 19 or 20, 2022", "Workshop Date (TBD)"],
       ]}
