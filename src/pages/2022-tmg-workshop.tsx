@@ -120,9 +120,9 @@ const Page: React.FC<Props> = ({ data }) => (
       The submission of the papers should be in accordance to the GI-LNI style and have to be submitted via EasyChair (please select the track <strong>W6: Text Mining and Generation</strong>).
       Authors can submit three different types of papers:
       <Ul>
-        <Li>Full Paper (up to 12 pages)</Li>
-        <Li>Short Paper (up to 6 pages)</Li>
-        <Li>Extended Abstract (up to 3 pages)</Li>
+        <Li>Full Paper (up to 12 pages, excluding references)</Li>
+        <Li>Short Paper (up to 6 pages, excluding references)</Li>
+        <Li>Extended Abstract (up to 3 pages, excluding references)</Li>
       </Ul>
       If selected for publication in the GI-LNI proceedings, authors will later get a possibility to submit an extended version of the paper disregarding their original submission format.
       The workshop is running a single-blind review process.
