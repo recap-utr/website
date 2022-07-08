@@ -47,10 +47,10 @@ const Page: React.FC<Props> = ({ data }) => (
   >
     <Wrap justify="center" mt={10} mb={10} spacingX={5} spacingY={2}>
       <WrapItem>
-        <Tag icon="calendar-alt">September 19 or 20, 2022</Tag>
+        <Tag icon="calendar-alt">September 19, 2022</Tag>
       </WrapItem>
       <WrapItem>
-        <Tag icon="clock">One-day workshop</Tag>
+        <Tag icon="clock">09:00–16:30</Tag>
       </WrapItem>
       <WrapItem>
         <Tag icon="info-circle">
@@ -83,7 +83,7 @@ const Page: React.FC<Props> = ({ data }) => (
         ["July 15, 2022", "Submission Due"],
         ["August 10, 2022", "Author Notification"],
         ["August 31, 2022", "Camera Ready"],
-        ["September 19 or 20, 2022", "Workshop Date (TBD)"],
+        ["September 19, 2022", "Workshop Date"],
       ]}
     />
 
