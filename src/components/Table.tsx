@@ -13,7 +13,12 @@ import React from "react";
 
 interface Props {
   columns: Array<string>;
-  rows: Array<Array<string>>;
+  rows: Array<
+    Array<
+      | React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+      | string
+    >
+  >;
   caption?: string;
   props?: TableProps;
 }
