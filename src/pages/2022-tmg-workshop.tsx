@@ -1,4 +1,15 @@
-import { Center, SimpleGrid, Stack, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  Box,
+  Center,
+  SimpleGrid,
+  Stack,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
@@ -45,6 +56,16 @@ const Page: React.FC<Props> = ({ data }) => (
     title="Workshop on Text Mining and Generation (TMG) at KI-2022"
     description="One-day workshop co-located with KI-2022 concerned with transforming text data between structured and unstructured representations."
   >
+    <Alert mt={10} mb={5} status="info">
+      <AlertIcon />
+      <Box>
+        <AlertTitle>Deadline Extension</AlertTitle>
+        <AlertDescription>
+          The paper submission deadline has been extended by one week until{" "}
+          <b>July 22, 2022</b>
+        </AlertDescription>
+      </Box>
+    </Alert>
     <Wrap justify="center" mt={10} mb={10} spacingX={5} spacingY={2}>
       <WrapItem>
         <Tag icon="calendar-alt">September 19, 2022</Tag>
@@ -58,7 +79,7 @@ const Page: React.FC<Props> = ({ data }) => (
         </Tag>
       </WrapItem>
       <WrapItem>
-        <Tag icon="location-dot">Trier, Germany</Tag>
+        <Tag icon="location-dot">Virtual (Hosted in Trier, Germany)</Tag>
       </WrapItem>
     </Wrap>
     {/* prettier-ignore */}
@@ -80,7 +101,12 @@ const Page: React.FC<Props> = ({ data }) => (
       caption="All dates are calculated at 11:59 AoE"
       columns={["Date", "Description"]}
       rows={[
-        ["July 15, 2022", "Submission Due"],
+        [
+          <>
+            <s>July 15, 2022</s> July 22, 2022
+          </>,
+          "Submission Due",
+        ],
         ["August 10, 2022", "Author Notification"],
         ["August 31, 2022", "Camera Ready"],
         ["September 19, 2022", "Workshop Date"],
