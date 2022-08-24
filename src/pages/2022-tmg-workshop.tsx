@@ -107,8 +107,8 @@ const Page: React.FC<Props> = ({ data }) => (
           </>,
           "Submission Due",
         ],
-        ["August 22, 2022", "Author Notification"],
-        ["August 31, 2022", "Camera Ready"],
+        ["August 31, 2022", "Author Notification"],
+        ["September 11, 2022", "Camera Ready"],
         ["September 19, 2022", "Workshop Date"],
       ]}
     />
