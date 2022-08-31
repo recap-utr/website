@@ -20,7 +20,7 @@ interface Props extends React.PropsWithChildren {
 
 const CustomTable: React.FC<Props> = ({ props, caption, rows, columns }) => {
   return (
-    <TableContainer>
+    <TableContainer whiteSpace="normal">
       <Table {...props}>
         {caption && <TableCaption>{caption}</TableCaption>}
         <Thead>

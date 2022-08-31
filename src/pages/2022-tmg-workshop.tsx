@@ -5,8 +5,11 @@ import {
   AlertTitle,
   Box,
   Center,
+  ListItem,
   SimpleGrid,
   Stack,
+  Text,
+  UnorderedList,
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
@@ -16,9 +19,37 @@ import React from "react";
 import { A, H2, H3, Li, P, Ul } from "../components/BodyComponents";
 import ButtonLink from "../components/ButtonLink";
 import Layout from "../components/Layout";
+import Link from "../components/Link";
 import Profiles from "../components/Profiles";
 import Table from "../components/Table";
 import Tag from "../components/Tag";
+
+const authorFormatter = new Intl.ListFormat("en", {
+  style: "long",
+  type: "conjunction",
+});
+
+interface PaperProps {
+  title: string;
+  authors: Array<string>;
+  url?: string;
+}
+
+const Paper: React.FC<PaperProps> = ({ title, authors, url }) => {
+  let content = (
+    <Text>
+      {authorFormatter.format(authors)}
+      <br />
+      <i>{title}</i>
+    </Text>
+  );
+
+  if (url !== undefined) {
+    content = <Link href={url}>{content}</Link>;
+  }
+
+  return <ListItem>{content}</ListItem>;
+};
 
 interface Props {
   data: {
@@ -28,13 +59,6 @@ interface Props {
         affiliation: string;
         email: string;
         name: string;
-      }>;
-    };
-    schedule: {
-      nodes: Array<{
-        start: string;
-        end: string;
-        event: string;
       }>;
     };
   };
@@ -59,10 +83,10 @@ const Page: React.FC<Props> = ({ data }) => (
     <Alert mt={10} mb={5} status="info">
       <AlertIcon />
       <Box>
-        <AlertTitle>Deadline Extension</AlertTitle>
+        <AlertTitle>Schedule Available</AlertTitle>
         <AlertDescription>
-          The paper submission deadline has been extended until{" "}
-          <b>August 1, 2022</b>
+          The final schedule has been added to our website and contains a list
+          of accepted papers.
         </AlertDescription>
       </Box>
     </Alert>
@@ -71,7 +95,7 @@ const Page: React.FC<Props> = ({ data }) => (
         <Tag icon="calendar-alt">September 19, 2022</Tag>
       </WrapItem>
       <WrapItem>
-        <Tag icon="clock">09:00–16:30</Tag>
+        <Tag icon="clock">10:00–16:00</Tag>
       </WrapItem>
       <WrapItem>
         <Tag icon="info-circle">
@@ -95,21 +119,83 @@ const Page: React.FC<Props> = ({ data }) => (
       Since recent approaches to text mining and text generation are predominantly based on artificial intelligence (AI) methodologies, KI 2022 is a relevant venue to bring together AI researchers working on these two tasks.
     </P>
 
-    <H2>Important Dates</H2>
+    <H2>Workshop Schedule</H2>
     <Table
       props={{ variant: "striped", size: "sm" }}
-      caption="All dates are calculated at 11:59 AoE"
-      columns={["Date", "Description"]}
+      columns={["Start", "End", "Event"]}
       rows={[
+        ["10:00", "10:10", <b>Opening</b>],
         [
+          "10:10",
+          "11:45",
           <>
-            <s>July 15, 2022</s> August 1, 2022
+            <Text as="b">Session 1: Original Papers</Text>
+            <UnorderedList mt={2} spacing={2}>
+              <Paper
+                title="German to English: Fake News Detection with Machine Translation"
+                authors={["Jin Liu", "Steffen Thoma"]}
+              />
+              <Paper
+                title="Inductive Linking and Ranking in Knowledge Graphs of Varying Scale"
+                authors={["Felix Hamann", "Adrian Ulges", "Maurice Falk"]}
+              />
+              <Paper
+                title="Explaining Hatespeech Detection with Model-Agnostic Methods: A Case Study on Twitter Dataset"
+                authors={["Durgesh Nandini", "Ute Schmid"]}
+              />
+              <Paper
+                title="Comparing Unsupervised Algorithms to Construct Argument Graphs"
+                authors={["Mirko Lenz", "Premtim Sahitaj", "Lorik Dumani"]}
+              />
+            </UnorderedList>
           </>,
-          "Submission Due",
         ],
-        ["August 31, 2022", "Author Notification"],
-        ["September 11, 2022", "Camera Ready"],
-        ["September 19, 2022", "Workshop Date"],
+        ["11:45", "13:15", <>Break</>],
+        [
+          "13:15",
+          "14:15",
+          <Link href="#keynote">
+            <b>Keynote by Iryna Gurevych</b>
+          </Link>,
+        ],
+        ["14:15", "14:30", <>Break</>],
+        [
+          "14:30",
+          "15:30",
+          <>
+            <Text as="b">Session 2: Invited Talks</Text>
+            <UnorderedList mt={2} spacing={2}>
+              <Paper
+                title="Extractive Snippet Generation for Arguments"
+                authors={[
+                  "Milad Alshomary",
+                  "Nick Düsterhus",
+                  "Henning Wachsmuth",
+                ]}
+                url="https://webis.de/downloads/publications/papers/alshomary_2020b.pdf"
+              />
+              <Paper
+                title="Abstractive Snippet Generation"
+                authors={[
+                  "Wei-Fan Chen",
+                  "Shahbaz Syed",
+                  "Benno Stein",
+                  "Matthias Hagen",
+                  "Martin Potthast",
+                ]}
+                url="https://webis.de/downloads/publications/papers/chen_2020a.pdf"
+              />
+              <Paper
+                title="An End-to-end Model for Entity-level Relation Extraction using Multi-instance Learning"
+                authors={["Markus Eberts", "Adrian Ulges"]}
+                url="https://aclanthology.org/2021.eacl-main.319"
+              />
+            </UnorderedList>
+          </>,
+        ],
+        ["15:30", "16:00", <b>Closing and Open Panel Discussion</b>],
+        ["16:00", "17:00", <>Break</>],
+        ["17:00", "18:00", <b>Recap-Session with all KI Participants</b>],
       ]}
     />
 
@@ -172,7 +258,25 @@ const Page: React.FC<Props> = ({ data }) => (
       </ButtonLink>
     </Stack>
 
-    <H2>Keynote by Prof. Dr. Iryna Gurevych</H2>
+    <H2>Important Dates</H2>
+    <Table
+      props={{ variant: "striped", size: "sm" }}
+      caption="All dates are calculated at 11:59 AoE"
+      columns={["Date", "Description"]}
+      rows={[
+        [
+          <>
+            <s>July 15, 2022</s> August 1, 2022
+          </>,
+          "Submission Due",
+        ],
+        ["August 31, 2022", "Author Notification"],
+        ["September 11, 2022", "Camera Ready Copy"],
+        ["September 19, 2022", "Workshop Date"],
+      ]}
+    />
+
+    <H2 id="keynote">Keynote by Prof. Dr. Iryna Gurevych</H2>
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
       <Center>
         <StaticImage
@@ -208,17 +312,6 @@ const Page: React.FC<Props> = ({ data }) => (
         To edify false beliefs, we are collaborating with cognitive scientists and psychologists to automatically detect and respond to attitudes of vaccine hesitancy, encouraging anti-vaxxers to change their minds with effective <strong>communication</strong> strategies.
       </P>
 
-    <H2>Preliminary Schedule</H2>
-    <Table
-      props={{ variant: "striped", size: "sm" }}
-      columns={["Start", "End", "Event"]}
-      rows={data.schedule.nodes.map((entry: any) => [
-        entry.start,
-        entry.end,
-        entry.event,
-      ])}
-    />
-
     <H2>Organizing and Program Committee</H2>
     <Profiles profiles={data.members.nodes} />
   </Layout>
@@ -240,13 +333,6 @@ export const query = graphql`
         affiliation
         email
         name
-      }
-    }
-    schedule: allWorkshopScheduleYaml {
-      nodes {
-        start
-        end
-        event
       }
     }
   }
