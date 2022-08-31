@@ -15,8 +15,8 @@ const Profiles: React.FC<Props> = ({ profiles }) => {
       spacingY={10}
       columns={{ base: 1, sm: 2, lg: maxColumns }}
     >
-      {profiles.map((profile) => (
-        <Profile {...profile} />
+      {profiles.map((profile, i) => (
+        <Profile {...profile} key={i} />
       ))}
     </SimpleGrid>
   );

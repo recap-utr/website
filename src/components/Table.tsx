@@ -25,16 +25,16 @@ const CustomTable: React.FC<Props> = ({ props, caption, rows, columns }) => {
         {caption && <TableCaption>{caption}</TableCaption>}
         <Thead>
           <Tr>
-            {columns.map((column) => (
-              <Th>{column}</Th>
+            {columns.map((column, i) => (
+              <Th key={i}>{column}</Th>
             ))}
           </Tr>
         </Thead>
         <Tbody>
-          {rows.map((row) => (
-            <Tr>
-              {row.map((column) => (
-                <Td>{column}</Td>
+          {rows.map((row, i) => (
+            <Tr key={i}>
+              {row.map((column, i) => (
+                <Td key={i}>{column}</Td>
               ))}
             </Tr>
           ))}
