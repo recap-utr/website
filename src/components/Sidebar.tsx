@@ -73,7 +73,7 @@ const SidebarContent: React.FC<{
           >
             <Button
               isActive={withSlash(currentSlug) === withSlash(entry.url)}
-              isFullWidth
+              width="full"
               justifyContent="left"
               leftIcon={<Icon name={entry.icon} />}
             >
