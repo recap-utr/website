@@ -19,7 +19,7 @@ const Page: React.FC<Props> = ({ data }) => (
   >
     <Stack spacing={7} mt={5}>
       {data.allCitation.nodes.map((citation) => (
-        <Citation {...citation} key={citation.citation_label} />
+        <Citation {...citation} key={citation.citation_key} />
       ))}
     </Stack>
   </Layout>
@@ -29,7 +29,7 @@ export const query = graphql`
   query {
     allCitation(sort: { fields: issued___date_parts, order: DESC }) {
       nodes {
-        citation_label
+        citation_key
         author {
           given
           family

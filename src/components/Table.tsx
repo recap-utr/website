@@ -9,16 +9,11 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { ReactNode } from "react";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   columns: Array<string>;
-  rows: Array<
-    Array<
-      | React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-      | string
-    >
-  >;
+  rows: Array<Array<ReactNode>>;
   caption?: string;
   props?: TableProps;
 }

@@ -4,7 +4,7 @@ import React from "react";
 import Icon from "./Icon";
 import Link from "./Link";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   href: string;
   icon?: IconName;
   color?: ThemeTypings["colorSchemes"];

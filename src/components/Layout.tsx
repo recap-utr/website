@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 
 library.add(fas);
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   title: string;
   description?: string;
 }

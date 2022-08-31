@@ -3,7 +3,7 @@ import { IconName } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import Icon from "./Icon";
 
-interface Props {
+interface Props extends React.PropsWithChildren {
   icon?: IconName;
 }
 

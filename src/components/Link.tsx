@@ -5,6 +5,11 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import React from "react";
 
+interface Props extends React.PropsWithChildren {
+  href: string;
+  props?: ChakraLinkProps;
+}
+
 const isExternal = (url: string) => {
   try {
     return new URL(url).origin !== location.origin;
@@ -13,10 +18,7 @@ const isExternal = (url: string) => {
   }
 };
 
-const Link: React.FC<{
-  href: string;
-  props?: ChakraLinkProps;
-}> = ({ href, props, children }) => {
+const Link: React.FC<Props> = ({ href, props, children }) => {
   if (isExternal(href)) {
     return (
       <ChakraLink {...props} href={href} isExternal>
