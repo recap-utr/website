@@ -1,9 +1,4 @@
 import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-  Box,
   Center,
   ListItem,
   SimpleGrid,
@@ -62,7 +57,7 @@ interface Props {
 
 const Page: React.FC<PageProps<Props>> = ({ data }) => (
   <Layout title={TITLE}>
-    <Alert mt={10} mb={5} status="info">
+    {/* <Alert mt={10} mb={5} status="info">
       <AlertIcon />
       <Box>
         <AlertTitle>Schedule Available</AlertTitle>
@@ -71,7 +66,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
           of accepted papers.
         </AlertDescription>
       </Box>
-    </Alert>
+    </Alert> */}
     <Wrap justify="center" mt={10} mb={10} spacingX={5} spacingY={2}>
       <WrapItem>
         <Tag icon="calendar-alt">September 19, 2022</Tag>
@@ -88,6 +83,15 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
         <Tag icon="location-dot">Virtual (Hosted in Trier, Germany)</Tag>
       </WrapItem>
     </Wrap>
+    <Center mb={10}>
+      <ButtonLink
+        color="orange"
+        icon="pen-to-square"
+        href="https://pretix.eu/gi/KI2022/"
+      >
+        Register Now (Free for Students)
+      </ButtonLink>
+    </Center>
     {/* prettier-ignore */}
     <P>
       Digital text data is available in large amounts and different granularities.
