@@ -1,4 +1,4 @@
-import { graphql, HeadFC } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, P } from "../components/BodyComponents";
@@ -7,27 +7,25 @@ import Profiles from "../components/Profiles";
 import { Seo } from "../components/Seo";
 
 interface Props {
-  data: {
-    members: {
-      nodes: Array<{
-        avatar: ImageDataLike;
-        email: string;
-        name: string;
-      }>;
-    };
-    schedule: {
-      nodes: Array<{
-        start: string;
-        end: string;
-        event: string;
-      }>;
-    };
+  members: {
+    nodes: Array<{
+      avatar: ImageDataLike;
+      email: string;
+      name: string;
+    }>;
+  };
+  schedule: {
+    nodes: Array<{
+      start: string;
+      end: string;
+      event: string;
+    }>;
   };
 }
 
 const TITLE = "ReCAP Trier University";
 
-const Page: React.FC<Props> = ({ data }) => (
+const Page: React.FC<PageProps<Props>> = ({ data }) => (
   <Layout title={TITLE}>
     {/* prettier-ignore */}
     <P>

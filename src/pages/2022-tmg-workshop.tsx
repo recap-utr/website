@@ -13,7 +13,7 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { graphql, HeadFC } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, Li, P, Ul } from "../components/BodyComponents";
@@ -50,19 +50,17 @@ const Paper: React.FC<PaperProps> = ({ title, authors, url }) => {
 };
 
 interface Props {
-  data: {
-    members: {
-      nodes: Array<{
-        avatar: ImageDataLike;
-        affiliation: string;
-        email: string;
-        name: string;
-      }>;
-    };
+  members: {
+    nodes: Array<{
+      avatar: ImageDataLike;
+      affiliation: string;
+      email: string;
+      name: string;
+    }>;
   };
 }
 
-const Page: React.FC<Props> = ({ data }) => (
+const Page: React.FC<PageProps<Props>> = ({ data }) => (
   <Layout title={TITLE}>
     <Alert mt={10} mb={5} status="info">
       <AlertIcon />

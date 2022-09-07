@@ -1,4 +1,4 @@
-import { graphql, HeadFC } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import React, { createElement, Fragment } from "react";
 import rehypeReact from "rehype-react";
 import { unified } from "unified";
@@ -32,18 +32,16 @@ const renderAst = (ast: any): JSX.Element => {
 };
 
 export interface Props {
-  data: {
-    page: {
-      htmlAst: any;
-      frontmatter: {
-        title: string;
-        description?: string;
-      };
+  page: {
+    htmlAst: any;
+    frontmatter: {
+      title: string;
+      description?: string;
     };
   };
 }
 
-const Page: React.FC<Props> = ({ data }) => {
+const Page: React.FC<PageProps<Props>> = ({ data }) => {
   const { page } = data;
   const { frontmatter, htmlAst } = page;
   return <Layout title={frontmatter.title}>{renderAst(htmlAst)}</Layout>;

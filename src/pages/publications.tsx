@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react";
-import { graphql, HeadFC } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import React from "react";
 import Citation, { Props as CitationProps } from "../components/Citation";
 import Layout from "../components/Layout";
@@ -7,14 +7,12 @@ import { Seo } from "../components/Seo";
 
 const TITLE = "Publications";
 interface Props {
-  data: {
-    allCitation: {
-      nodes: Array<CitationProps>;
-    };
+  allCitation: {
+    nodes: Array<CitationProps>;
   };
 }
 
-const Page: React.FC<Props> = ({ data }) => (
+const Page: React.FC<PageProps<Props>> = ({ data }) => (
   <Layout title={TITLE}>
     <Stack spacing={7} mt={5}>
       {data.allCitation.nodes.map((citation) => (
