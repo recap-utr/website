@@ -25,10 +25,6 @@ import { Seo } from "../components/Seo";
 import Table from "../components/Table";
 import Tag from "../components/Tag";
 
-const authorFormatter = new Intl.ListFormat("en", {
-  style: "long",
-  type: "conjunction",
-});
 const TITLE = "Workshop on Text Mining and Generation (TMG) at KI-2022";
 
 interface PaperProps {
@@ -40,7 +36,7 @@ interface PaperProps {
 const Paper: React.FC<PaperProps> = ({ title, authors, url }) => {
   let content = (
     <Text as="div">
-      {authorFormatter.format(authors)}
+      {authors.join(", ")}
       <br />
       <i>{title}</i>
     </Text>
