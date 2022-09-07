@@ -13,7 +13,7 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, Li, P, Ul } from "../components/BodyComponents";
@@ -21,6 +21,7 @@ import ButtonLink from "../components/ButtonLink";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import Profiles from "../components/Profiles";
+import { Seo } from "../components/Seo";
 import Table from "../components/Table";
 import Tag from "../components/Tag";
 
@@ -28,6 +29,7 @@ const authorFormatter = new Intl.ListFormat("en", {
   style: "long",
   type: "conjunction",
 });
+const TITLE = "Workshop on Text Mining and Generation (TMG) at KI-2022";
 
 interface PaperProps {
   title: string;
@@ -64,22 +66,8 @@ interface Props {
   };
 }
 
-// const headers = {
-//   CALL_FOR_PAPERS: {
-//     title: "Call for Papers",
-//     icon: "house"
-//   },
-//   KEYNOTE: {
-//     title: "Keynote",
-//     icon: "house"
-//   },
-// }
-
 const Page: React.FC<Props> = ({ data }) => (
-  <Layout
-    title="Workshop on Text Mining and Generation (TMG) at KI-2022"
-    description="One-day workshop co-located with KI-2022 concerned with transforming text data between structured and unstructured representations."
-  >
+  <Layout title={TITLE}>
     <Alert mt={10} mb={5} status="info">
       <AlertIcon />
       <Box>
@@ -336,5 +324,12 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head: HeadFC<Props> = ({ data }) => (
+  <Seo
+    title={TITLE}
+    description="One-day workshop co-located with KI-2022 concerned with transforming text data between structured and unstructured representations."
+  />
+);
 
 export default Page;

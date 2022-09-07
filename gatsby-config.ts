@@ -4,13 +4,13 @@ const config: GatsbyConfig = {
   trailingSlash: "always",
   siteMetadata: {
     title: `ReCAP Trier University`,
+    description: `Research project at Trier University that is funded by DFG and concerned with building an argumentation machine.`,
     siteUrl: `https://recap.uni-trier.de`,
   },
   plugins: [
     // "gatsby-plugin-netlify",
     "gatsby-plugin-image",
     "gatsby-transformer-yaml",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-remark",
     {
@@ -35,6 +35,13 @@ const config: GatsbyConfig = {
       options: {
         name: "images",
         path: "./src/images/",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "assets",
+        path: "./src/assets/",
       },
     },
     {

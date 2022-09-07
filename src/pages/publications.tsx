@@ -1,9 +1,11 @@
 import { Stack } from "@chakra-ui/react";
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import React from "react";
 import Citation, { Props as CitationProps } from "../components/Citation";
 import Layout from "../components/Layout";
+import { Seo } from "../components/Seo";
 
+const TITLE = "Publications";
 interface Props {
   data: {
     allCitation: {
@@ -13,10 +15,7 @@ interface Props {
 }
 
 const Page: React.FC<Props> = ({ data }) => (
-  <Layout
-    title="Publications"
-    description="List of the most important publications created as part of the ReCAP project."
-  >
+  <Layout title={TITLE}>
     <Stack spacing={7} mt={5}>
       {data.allCitation.nodes.map((citation) => (
         <Citation {...citation} key={citation.citation_key} />
@@ -50,5 +49,12 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head: HeadFC<Props> = ({ data }) => (
+  <Seo
+    title={TITLE}
+    description="List of the most important publications created as part of the ReCAP project."
+  />
+);
 
 export default Page;

@@ -1,9 +1,10 @@
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, P } from "../components/BodyComponents";
 import Layout from "../components/Layout";
 import Profiles from "../components/Profiles";
+import { Seo } from "../components/Seo";
 
 interface Props {
   data: {
@@ -24,11 +25,10 @@ interface Props {
   };
 }
 
+const TITLE = "ReCAP Trier University";
+
 const Page: React.FC<Props> = ({ data }) => (
-  <Layout
-    title="ReCAP Trier University"
-    description="Research project at Trier University that is funded by DFG and concerned with building an argumentation machine."
-  >
+  <Layout title={TITLE}>
     {/* prettier-ignore */}
     <P>
       The ReCaP project follows the vision of future argumentation engines that support scientists, journalistic writers as well as human decision makers to get a comprehensive overview of current arguments and opinions on a given topic as well as to develop personal, informed opinions.
@@ -69,5 +69,7 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head: HeadFC<Props> = ({ data }) => <Seo title={TITLE} />;
 
 export default Page;

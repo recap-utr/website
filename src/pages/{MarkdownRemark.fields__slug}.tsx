@@ -1,9 +1,10 @@
-import { graphql } from "gatsby";
+import { graphql, HeadFC } from "gatsby";
 import React, { createElement, Fragment } from "react";
 import rehypeReact from "rehype-react";
 import { unified } from "unified";
 import * as body from "../components/BodyComponents";
 import Layout from "../components/Layout";
+import { Seo } from "../components/Seo";
 
 const processor = unified().use(rehypeReact, {
   createElement,
@@ -45,11 +46,7 @@ export interface Props {
 const Page: React.FC<Props> = ({ data }) => {
   const { page } = data;
   const { frontmatter, htmlAst } = page;
-  return (
-    <Layout title={frontmatter.title} description={frontmatter.description}>
-      {renderAst(htmlAst)}
-    </Layout>
-  );
+  return <Layout title={frontmatter.title}>{renderAst(htmlAst)}</Layout>;
 };
 
 export const query = graphql`
@@ -63,5 +60,13 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head: HeadFC<Props> = ({ data }) => {
+  const frontmatter = data.data.page.frontmatter;
+
+  return (
+    <Seo title={frontmatter.title} description={frontmatter.description} />
+  );
+};
 
 export default Page;
