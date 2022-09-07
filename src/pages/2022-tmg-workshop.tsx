@@ -256,7 +256,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
       rows={[
         ["August 1, 2022", "Submission Due"],
         ["August 31, 2022", "Author Notification"],
-        ["September 7, 2022", "Camera-Ready Version"],
+        ["September 11, 2022", "Camera-Ready Version"],
         ["September 19, 2022", "Workshop Date"],
       ]}
     />
