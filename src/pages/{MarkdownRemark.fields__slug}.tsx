@@ -60,7 +60,7 @@ export const query = graphql`
 `;
 
 export const Head: HeadFC<Props> = ({ data }) => {
-  const frontmatter = data.data.page.frontmatter;
+  const frontmatter = data.page.frontmatter;
 
   return (
     <Seo title={frontmatter.title} description={frontmatter.description} />
