@@ -18,8 +18,8 @@ export interface Props {
     date_parts: Array<Array<number>>;
   };
   collection_title?: string;
-  citation_label: string;
   publisher_place?: string;
+  citation_key: string;
 }
 
 const Citation: React.FC<Props> = (props) => {
