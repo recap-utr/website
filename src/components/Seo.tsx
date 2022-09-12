@@ -51,7 +51,7 @@ export function Seo({ description, title }: Props) {
 
   return (
     <>
-      <title>{`${title} | ¢{defaultTitle}`}</title>
+      <title>{`${title} | ${defaultTitle}`}</title>
       <meta name="description" content={metaDescription} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={metaDescription} />
