@@ -136,18 +136,18 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
             </UnorderedList>
           </>,
         ],
-        ["11:45", "13:15", <>Break</>],
+        ["11:45", "13:30", <>Break</>],
         [
-          "13:15",
-          "14:15",
+          "13:30",
+          "14:30",
           <Link href="#keynote">
             <b>Keynote by Iryna Gurevych</b>
           </Link>,
         ],
-        ["14:15", "14:30", <>Break</>],
+        ["14:30", "14:45", <>Break</>],
         [
-          "14:30",
-          "15:30",
+          "14:45",
+          "15:45",
           <>
             <Text as="b">Session 2: Invited Talks</Text>
             <UnorderedList mt={2} spacing={2}>
@@ -179,7 +179,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
             </UnorderedList>
           </>,
         ],
-        ["15:30", "16:00", <b>Closing and Open Panel Discussion</b>],
+        ["15:45", "16:15", <b>Closing and Open Panel Discussion</b>],
       ]}
     />
 
