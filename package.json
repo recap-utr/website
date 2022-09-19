@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^3.0.6",
-    "@chakra-ui/react": "^2.3.2",
+    "@chakra-ui/react": "^2.3.4",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -25,24 +25,24 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "citation-js": "^0.6.4",
-    "gatsby": "^4.22.0",
-    "gatsby-plugin-image": "^2.22.0",
-    "gatsby-plugin-manifest": "^4.22.0",
-    "gatsby-plugin-sharp": "^4.22.0",
-    "gatsby-plugin-sitemap": "^5.22.0",
-    "gatsby-source-filesystem": "^4.22.0",
-    "gatsby-transformer-remark": "^5.22.0",
-    "gatsby-transformer-sharp": "^4.22.0",
-    "gatsby-transformer-yaml": "^4.22.0",
+    "gatsby": "^4.23.0",
+    "gatsby-plugin-image": "^2.23.0",
+    "gatsby-plugin-manifest": "^4.23.0",
+    "gatsby-plugin-sharp": "^4.23.0",
+    "gatsby-plugin-sitemap": "^5.23.0",
+    "gatsby-source-filesystem": "^4.23.0",
+    "gatsby-transformer-remark": "^5.23.0",
+    "gatsby-transformer-sharp": "^4.23.0",
+    "gatsby-transformer-yaml": "^4.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-react": "^7.1.1",
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@types/node": "^18.7.15",
-    "@types/react": "^18.0.18",
+    "@types/node": "^18.7.18",
+    "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.3"
   }
 }
