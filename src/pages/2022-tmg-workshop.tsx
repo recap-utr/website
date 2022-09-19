@@ -180,8 +180,6 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
           </>,
         ],
         ["15:30", "16:00", <b>Closing and Open Panel Discussion</b>],
-        ["16:00", "17:00", <>Break</>],
-        ["17:00", "18:00", <b>Recap-Session with all KI Participants</b>],
       ]}
     />
 
