@@ -5,20 +5,23 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import React from "react";
 
-interface Props extends React.PropsWithChildren {
-  href: string;
-  props?: ChakraLinkProps;
-}
-
 const isExternal = (url: string) => {
   try {
     return new URL(url).origin !== location.origin;
-  } catch {
-    return false;
+  } catch {}
+
+  if (url.startsWith("/static")) {
+    return true;
   }
+
+  return false;
 };
 
-const Link: React.FC<Props> = ({ href, props, children }) => {
+const Link: React.FC<ChakraLinkProps> = ({ href, children, ...props }) => {
+  if (href === undefined) {
+    return <></>;
+  }
+
   if (isExternal(href)) {
     return (
       <ChakraLink {...props} href={href} isExternal>
