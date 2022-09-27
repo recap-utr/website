@@ -1,13 +1,7 @@
-// @ts-ignore
-import Cite from "citation-js";
+import { Cite } from "@citation-js/core";
 import { GatsbyNode } from "gatsby";
 import { createFilePath } from "gatsby-source-filesystem";
-
-// https://github.com/tetsuyakanda/gatsby-transformer-citationjs/blob/letsgo/src/gatsby-node.js
-function format(entry: { [key: string]: any }) {
-  delete entry["_graph"];
-  return entry;
-}
+require("@citation-js/plugin-bibtex");
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   node,
@@ -21,18 +15,22 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = async ({
 
   if (node.extension === `bib`) {
     const content = await loadNodeContent(node);
-    const parsedContent = new Cite(content).data;
+    const parsedContent = new Cite(content, {
+      generateGraph: false,
+      forceType: "@biblatex/text",
+      maxChainLength: 100,
+    }).data;
 
     parsedContent
-      .map(format)
-      .map((d) => {
+      .map((entry) => {
         return {
-          ...d,
-          id: createNodeId(`${node.id} ${d.id} >>> Citation`),
+          ...entry,
+          _id: entry.id,
+          id: createNodeId(`${node.id} ${entry.id} >>> Citation`),
           children: [],
           parent: node.id,
           internal: {
-            contentDigest: createContentDigest(d),
+            contentDigest: createContentDigest(entry),
             type: `Citation`,
           },
         };
