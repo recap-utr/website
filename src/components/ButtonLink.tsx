@@ -11,12 +11,7 @@ interface Props extends React.PropsWithChildren {
 }
 
 const ButtonLink: React.FC<Props> = ({ href, color, icon, children }) => (
-  <Link
-    props={{
-      _hover: { textDecoration: "none" },
-    }}
-    href={href}
-  >
+  <Link _hover={{ textDecoration: "none" }} href={href}>
     <Button colorScheme={color} leftIcon={icon && <Icon name={icon} />}>
       {children}
     </Button>
