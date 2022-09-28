@@ -25,7 +25,6 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = async ({
       .map((entry) => {
         return {
           ...entry,
-          _id: entry.id,
           id: createNodeId(`${node.id} ${entry.id} >>> Citation`),
           children: [],
           parent: node.id,
