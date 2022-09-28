@@ -8,7 +8,7 @@ interface Props {
 }
 
 const HeaderContent: React.FC<{}> = () => (
-  <Link href="/" props={{ _hover: {} }}>
+  <Link href="/" _hover={{}}>
     <Heading as="span" size="lg">
       ReCAP Trier University
     </Heading>
@@ -17,7 +17,7 @@ const HeaderContent: React.FC<{}> = () => (
 
 const MobileHeader: React.FC<Props> = ({ onShowSidebar }) => {
   return (
-    <Box display={{ base: "flex", md: "none" }}>
+    <Box display={{ base: "flex", md: "none" }} marginTop={2}>
       <Center flex="1">
         <IconButton
           icon={<Icon name="bars" />}
