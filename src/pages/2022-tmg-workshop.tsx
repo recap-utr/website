@@ -78,11 +78,20 @@ interface Props {
       name: string;
     }>;
   };
+  papers: {
+    nodes: Array<{
+      publicURL: string;
+      name: string;
+    }>;
+  };
 }
 
 const Page: React.FC<PageProps<Props>> = ({ data }) => {
   const presentations = Object.fromEntries(
     data.presentations.nodes.map((file) => [file.name, file.publicURL])
+  );
+  const papers = Object.fromEntries(
+    data.papers.nodes.map((file) => [file.name, file.publicURL])
   );
 
   return (
@@ -113,7 +122,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           <Tag icon="location-dot">Virtual (Hosted in Trier, Germany)</Tag>
         </WrapItem>
       </Wrap>
-      <Center mb={10}>
+      {/* <Center mb={10}>
         <ButtonLink
           color="orange"
           icon="pen-to-square"
@@ -121,7 +130,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         >
           Register Now (Free for Students)
         </ButtonLink>
-      </Center>
+      </Center> */}
       {/* prettier-ignore */}
       <P>
         Digital text data is available in large amounts and different granularities.
@@ -150,22 +159,26 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                 <Paper
                   title="German to English: Fake News Detection with Machine Translation"
                   authors={["Jin Liu", "Steffen Thoma"]}
-                  presentationUrl={presentations["liu-thoma"]}
+                  presentationUrl={presentations["61"]}
+                  paperUrl={papers["61"]}
                 />
                 <Paper
                   title="Inductive Linking and Ranking in Knowledge Graphs of Varying Scale"
                   authors={["Felix Hamann", "Adrian Ulges", "Maurice Falk"]}
-                  presentationUrl={presentations["hamann-ulges-falk"]}
+                  presentationUrl={presentations["78"]}
+                  paperUrl={papers["78"]}
                 />
                 <Paper
                   title="Explaining Hatespeech Detection with Model-Agnostic Methods: A Case Study on Twitter Dataset"
                   authors={["Durgesh Nandini", "Ute Schmid"]}
-                  presentationUrl={presentations["nandini-schmid"]}
+                  presentationUrl={presentations["90"]}
+                  paperUrl={papers["90"]}
                 />
                 <Paper
                   title="Comparing Unsupervised Algorithms to Construct Argument Graphs"
                   authors={["Mirko Lenz", "Premtim Sahitaj", "Lorik Dumani"]}
-                  presentationUrl={presentations["lenz-sahitaj-dumani"]}
+                  presentationUrl={presentations["91"]}
+                  paperUrl={papers["91"]}
                 />
               </UnorderedList>
             </>,
@@ -340,7 +353,18 @@ export const query = graphql`
     presentations: allFile(
       filter: {
         sourceInstanceName: { eq: "assets" }
-        relativeDirectory: { eq: "2022-tmg-workshop" }
+        relativeDirectory: { eq: "2022-tmg-workshop/presentations" }
+      }
+    ) {
+      nodes {
+        publicURL
+        name
+      }
+    }
+    papers: allFile(
+      filter: {
+        sourceInstanceName: { eq: "assets" }
+        relativeDirectory: { eq: "2022-tmg-workshop/papers" }
       }
     ) {
       nodes {
