@@ -20,7 +20,7 @@ const MobileHeader: React.FC<Props> = ({ onShowSidebar }) => {
     <Box display={{ base: "flex", md: "none" }} marginTop={2}>
       <Center flex="1">
         <IconButton
-          icon={<Icon name="bars" />}
+          icon={<Icon icon="bars" />}
           onClick={onShowSidebar}
           aria-label="Show sidebar"
         />

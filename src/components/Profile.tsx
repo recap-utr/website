@@ -31,7 +31,7 @@ const Profile: React.FC<Props> = ({
           {name}
         </Heading>
         <Text whiteSpace="nowrap">
-          <Icon name="envelope" />
+          <Icon icon="envelope" />
           &nbsp;
           <Link whiteSpace="normal" href={`mailto:${email}`}>
             {email}
@@ -39,7 +39,7 @@ const Profile: React.FC<Props> = ({
         </Text>
         {affiliation && (
           <Text>
-            <Icon name="building" />
+            <Icon icon="building" />
             &nbsp;
             {affiliation}
           </Text>

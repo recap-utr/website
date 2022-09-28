@@ -1,17 +1,16 @@
 import { Tag as ChakraTag, TagLabel, TagLeftIcon } from "@chakra-ui/react";
-import { IconName } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import Icon from "./Icon";
+import Icon, { IconProp } from "./Icon";
 
 interface Props extends React.PropsWithChildren {
-  icon?: IconName;
+  icon?: IconProp;
 }
 
 const Tag: React.FC<Props> = ({ icon, children }) => (
   <ChakraTag size="lg">
     {icon && (
       <>
-        <TagLeftIcon as={() => <Icon name={icon} />} />
+        <TagLeftIcon as={() => <Icon icon={icon} />} />
         &nbsp;&nbsp;
       </>
     )}

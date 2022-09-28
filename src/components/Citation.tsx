@@ -97,7 +97,7 @@ const Citation: React.FC<Props> = (props) => {
             Website
           </ButtonLink>
         )}
-        <Button onClick={openBibtex} leftIcon={<Icon name="code" />}>
+        <Button onClick={openBibtex} leftIcon={<Icon icon="code" />}>
           BibTeX
         </Button>
       </Stack>
@@ -116,6 +116,19 @@ interface BibtexModalProps {
   citation: Props;
 }
 
+const cleanCitation: (props: Props) => Props = (props) => {
+  // Remove null values as formatting with citation-js will fail otherwise
+  const nonnull = Object.fromEntries(
+    Object.entries(props).filter(([_, v]) => v !== null && v !== undefined)
+  );
+  // Convert underscores in object keys to hyphens since citation-js expects that
+  return JSON.parse(
+    JSON.stringify(nonnull).replaceAll(/"[a-z_\-]+":/g, (match) =>
+      match.replace("_", "-")
+    )
+  );
+};
+
 const BibtexModal: React.FC<BibtexModalProps> = ({
   isOpen,
   onClose,
@@ -123,19 +136,8 @@ const BibtexModal: React.FC<BibtexModalProps> = ({
 }) => {
   const toast = useToast();
 
-  // Remove null values as formatting with citation-js will fail otherwise
-  let cleanCitation = Object.fromEntries(
-    Object.entries(citation).filter(([_, v]) => v !== null && v !== undefined)
-  );
-  // Convert underscores in object keys to hyphens since citation-js expects that
-  cleanCitation = JSON.parse(
-    JSON.stringify(cleanCitation).replaceAll(/"[a-z_\-]+":/g, (match) =>
-      match.replace("_", "-")
-    )
-  );
-
   let bibtex: string = citePlugins.output
-    .format("bibtex", [cleanCitation])
+    .format("bibtex", [cleanCitation(citation)])
     .trim();
 
   return (
@@ -156,7 +158,7 @@ const BibtexModal: React.FC<BibtexModalProps> = ({
         </ModalBody>
         <ModalFooter>
           <Button
-            leftIcon={<Icon name="copy" />}
+            leftIcon={<Icon icon="copy" />}
             onClick={() => {
               navigator.clipboard.writeText(bibtex);
               onClose();

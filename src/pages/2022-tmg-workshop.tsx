@@ -46,14 +46,14 @@ const Paper: React.FC<PaperProps> = ({
         <Text mt={1}>
           {paperUrl && (
             <Link href={paperUrl}>
-              <Icon name="file-lines" />
+              <Icon icon="file-lines" />
               &nbsp;Read paper
             </Link>
           )}
           {presentationUrl && paperUrl && <span style={{ marginRight: 10 }} />}
           {presentationUrl && (
             <Link href={presentationUrl}>
-              <Icon name="person-chalkboard" />
+              <Icon icon="person-chalkboard" />
               &nbsp;View presentation
             </Link>
           )}

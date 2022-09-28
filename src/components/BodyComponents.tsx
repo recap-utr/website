@@ -31,7 +31,7 @@ export const H6: React.FC<HeadingProps> = (props) => (
 export const A: React.FC<LinkProps> = ({ children, ...props }) => {
   const href = props.href ? props.href : "#";
   return (
-    <Link href={href} props={props}>
+    <Link {...props} href={href}>
       {children}
     </Link>
   );

@@ -28,7 +28,7 @@ const Link: React.FC<ChakraLinkProps> = ({ href, children, ...props }) => {
         {children}
       </ChakraLink>
     );
-  } else if (href.startsWith("#")) {
+  } else if (href.startsWith("#") || href.startsWith("mailto:")) {
     return (
       <ChakraLink {...props} href={href}>
         {children}

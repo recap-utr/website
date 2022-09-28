@@ -12,7 +12,7 @@ import {
   Img,
   Stack,
 } from "@chakra-ui/react";
-import { IconName } from "@fortawesome/free-solid-svg-icons";
+import { IconName, IconPrefix } from "@fortawesome/fontawesome-common-types";
 import { useLocation } from "@reach/router";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
@@ -31,6 +31,7 @@ interface StaticQuery {
       url: string;
       title: string;
       icon: IconName;
+      iconPrefix?: IconPrefix;
     }>;
   };
 }
@@ -48,6 +49,7 @@ const SidebarContent: React.FC<{
         nodes {
           title
           icon
+          iconPrefix
           url
         }
       }
@@ -64,10 +66,8 @@ const SidebarContent: React.FC<{
       <Stack position="relative">
         {entries.nodes.map((entry, key) => (
           <Link
-            props={{
-              _hover: { textDecoration: "none" },
-              onClick: onClick,
-            }}
+            _hover={{ textDecoration: "none" }}
+            onClick={onClick}
             key={key}
             href={entry.url}
           >
@@ -75,7 +75,14 @@ const SidebarContent: React.FC<{
               isActive={withSlash(currentSlug) === withSlash(entry.url)}
               width="full"
               justifyContent="left"
-              leftIcon={<Icon name={entry.icon} />}
+              leftIcon={
+                <Icon
+                  icon={{
+                    iconName: entry.icon,
+                    prefix: entry.iconPrefix ?? "fas",
+                  }}
+                />
+              }
             >
               {entry.title}
             </Button>
