@@ -7,7 +7,8 @@ interface Props {
 }
 
 const Profiles: React.FC<Props> = ({ profiles }) => {
-  const maxColumns = profiles.length === 4 || profiles.length === 2 ? 2 : 3;
+  // const maxColumns = profiles.length === 4 || profiles.length === 2 ? 2 : 3;
+  const maxColumns = 2;
 
   return (
     <SimpleGrid
