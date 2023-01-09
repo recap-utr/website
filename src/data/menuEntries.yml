@@ -3,12 +3,12 @@
   icon: home
   iconPrefix: fas
 - title: GitHub
-  url: "https://github.com/ReCAP-UTR"
+  url: "https://github.com/recap-utr"
   icon: github
   iconPrefix: fab
 - title: Publications
   url: "/publications"
   icon: book
-- title: TMG Workshop
-  url: /2022-tmg-workshop
+- title: TMG-2022
+  url: /workshops/2022/tmg
   icon: person-chalkboard

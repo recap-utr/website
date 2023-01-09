@@ -11,15 +11,15 @@ import {
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { A, H2, H3, Li, P, Ul } from "../components/BodyComponents";
-import ButtonLink from "../components/ButtonLink";
-import Icon from "../components/Icon";
-import Layout from "../components/Layout";
-import Link from "../components/Link";
-import Profiles from "../components/Profiles";
-import { Seo } from "../components/Seo";
-import Table from "../components/Table";
-import Tag from "../components/Tag";
+import { A, H2, H3, Li, P, Ul } from "../../../components/BodyComponents";
+import ButtonLink from "../../../components/ButtonLink";
+import Icon from "../../../components/Icon";
+import Layout from "../../../components/Layout";
+import Link from "../../../components/Link";
+import Profiles from "../../../components/Profiles";
+import { Seo } from "../../../components/Seo";
+import Table from "../../../components/Table";
+import Tag from "../../../components/Tag";
 
 const TITLE = "Workshop on Text Mining and Generation (TMG) at KI-2022";
 
@@ -313,7 +313,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             width={400}
             height={400}
             transformOptions={{ cropFocus: "centre" }}
-            src="../images/gurevych.jpg"
+            src="../../../images/gurevych.jpg"
             alt="Prof. Dr. Iryna Gurevych"
           />
         </Center>
@@ -353,7 +353,7 @@ export const query = graphql`
     presentations: allFile(
       filter: {
         sourceInstanceName: { eq: "assets" }
-        relativeDirectory: { eq: "2022-tmg-workshop/presentations" }
+        relativeDirectory: { eq: "workshops/2022/tmg/presentations" }
       }
     ) {
       nodes {
@@ -364,7 +364,7 @@ export const query = graphql`
     papers: allFile(
       filter: {
         sourceInstanceName: { eq: "assets" }
-        relativeDirectory: { eq: "2022-tmg-workshop/papers" }
+        relativeDirectory: { eq: "workshops/2022/tmg/papers" }
       }
     ) {
       nodes {

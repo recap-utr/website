@@ -3,6 +3,18 @@ import { GatsbyNode } from "gatsby";
 import { createFilePath } from "gatsby-source-filesystem";
 require("@citation-js/plugin-bibtex");
 
+export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
+  const { createRedirect } = actions;
+
+  const redirects = {
+    "2022-tmg-workshop": "workshops/2022/tmg",
+  };
+
+  Object.entries(redirects).forEach(([fromPath, toPath]) => {
+    createRedirect({ fromPath, toPath });
+  });
+};
+
 export const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   node,
   actions,
