@@ -11,7 +11,12 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   };
 
   Object.entries(redirects).forEach(([fromPath, toPath]) => {
-    createRedirect({ fromPath, toPath });
+    createRedirect({
+      fromPath,
+      toPath,
+      isPermanent: true,
+      redirectInBrowser: true,
+    });
   });
 };
 
