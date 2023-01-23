@@ -3,20 +3,28 @@ import { GatsbyNode } from "gatsby";
 import { createFilePath } from "gatsby-source-filesystem";
 require("@citation-js/plugin-bibtex");
 
+const stripTrailingSlash = (text: string) => {
+  return text.endsWith("/") ? text.slice(0, -1) : text;
+};
+
 export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   const { createRedirect } = actions;
 
   const redirects = {
     "/2022-tmg-workshop": "/workshops/2022/tmg/",
-    "/2022-tmg-workshop/": "/workshops/2022/tmg/",
   };
 
-  Object.entries(redirects).forEach(([fromPath, toPath]) => {
-    createRedirect({
-      fromPath,
-      toPath,
-      isPermanent: true,
-      redirectInBrowser: true,
+  Object.entries(redirects).forEach(([_fromPath, toPath]) => {
+    const normalizedFrom = stripTrailingSlash(_fromPath);
+    const fromPathVariants = [normalizedFrom, `${normalizedFrom}/`];
+
+    fromPathVariants.forEach((fromPath) => {
+      createRedirect({
+        fromPath,
+        toPath,
+        isPermanent: true,
+        redirectInBrowser: true,
+      });
     });
   });
 };
