@@ -15,7 +15,11 @@ interface Props {
 
 interface StaticQuery {
   logo: {
-    publicURL: string;
+    childImageSharp: {
+      resize: {
+        src: string;
+      };
+    };
   };
   site: {
     siteMetadata: {
@@ -34,7 +38,11 @@ export function Seo({ description, title }: Props) {
           relativePath: { eq: "logo.png" }
           sourceInstanceName: { eq: "assets" }
         ) {
-          publicURL
+          childImageSharp {
+            resize {
+              src
+            }
+          }
         }
         site {
           siteMetadata {
@@ -48,6 +56,7 @@ export function Seo({ description, title }: Props) {
   ) as StaticQuery;
   const metaDescription = description ?? site.siteMetadata.description;
   const defaultTitle = site.siteMetadata.title;
+  const logoUrl = logo.childImageSharp.resize.src;
 
   return (
     <>
@@ -56,11 +65,11 @@ export function Seo({ description, title }: Props) {
       <meta name="og:title" content={title} />
       <meta name="og:description" content={metaDescription} />
       <meta name="og:type" content="website" />
-      <meta name="image" content={logo.publicURL} />
+      <meta name="image" content={logoUrl} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={logo.publicURL} />
+      <meta name="twitter:image" content={logoUrl} />
       {/* <meta name="twitter:url" content={seo.url} /> */}
     </>
   );
