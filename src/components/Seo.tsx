@@ -55,12 +55,13 @@ export function Seo({ description, title }: Props) {
     `
   ) as StaticQuery;
   const metaDescription = description ?? site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata.title;
+  const siteTitle = site.siteMetadata.title;
   const logoUrl = logo.childImageSharp.resize.src;
+  const browserTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 
   return (
     <>
-      <title>{`${title} | ${defaultTitle}`}</title>
+      <title>{browserTitle}</title>
       <meta name="description" content={metaDescription} />
       <meta name="og:title" content={title} />
       <meta name="og:description" content={metaDescription} />

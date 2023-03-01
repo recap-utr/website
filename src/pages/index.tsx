@@ -7,6 +7,11 @@ import Profiles from "../components/Profiles";
 import { Seo } from "../components/Seo";
 
 interface Props {
+  site: {
+    siteMetadata: {
+      title: string;
+    };
+  };
   members: {
     nodes: Array<{
       avatar: ImageDataLike;
@@ -23,13 +28,11 @@ interface Props {
   };
 }
 
-const TITLE = "ReCAP Trier University";
-
 const Page: React.FC<PageProps<Props>> = ({ data }) => (
-  <Layout title={TITLE}>
+  <Layout title={data.site.siteMetadata.title}>
     {/* prettier-ignore */}
     <P>
-      The ReCaP project follows the vision of future argumentation engines that support scientists, journalistic writers as well as human decision makers to get a comprehensive overview of current arguments and opinions on a given topic as well as to develop personal, informed opinions.
+      The ReCAP project follows the vision of future argumentation engines that support scientists, journalistic writers as well as human decision makers to get a comprehensive overview of current arguments and opinions on a given topic as well as to develop personal, informed opinions.
       Such argumentation engines automatically identify available sources of information on the Web, especially argumentative texts and fakes, that are relevant to the topic at hand.
       Unlike existing search engines, which operate primarily on a textual level, such argumentation engines are based on reasoning at a knowledge level formed by arguments and argumentation structures.
       For a given context, they support the deliberation of arguments and counterarguments for a given issue based on current opinions and facts on the Internet.
@@ -54,6 +57,11 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => (
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     members: allRecapMembersYaml {
       nodes {
         avatar {
@@ -68,6 +76,8 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC<Props> = ({ data }) => <Seo title={TITLE} />;
+export const Head: HeadFC<Props> = ({ data }) => (
+  <Seo title={data.site.siteMetadata.title} />
+);
 
 export default Page;
