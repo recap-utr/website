@@ -5,16 +5,17 @@ import {
 import { Link as GatsbyLink } from "gatsby";
 import React from "react";
 
-const isExternal = (url: string) => {
+const useGatsbyLink = (url: string) => {
   try {
-    return new URL(url).origin !== location.origin;
-  } catch {}
+    new URL(url);
+    return false;
+  } catch {
+    if (url.startsWith("#") || url.startsWith("/static")) {
+      return false;
+    }
 
-  if (url.startsWith("/static")) {
     return true;
   }
-
-  return false;
 };
 
 const Link: React.FC<ChakraLinkProps> = ({ href, children, ...props }) => {
@@ -22,22 +23,20 @@ const Link: React.FC<ChakraLinkProps> = ({ href, children, ...props }) => {
     return <></>;
   }
 
-  if (isExternal(href)) {
+  if (useGatsbyLink(href)) {
     return (
-      <ChakraLink {...props} href={href} isExternal>
-        {children}
-      </ChakraLink>
-    );
-  } else if (href.startsWith("#") || href.startsWith("mailto:")) {
-    return (
-      <ChakraLink {...props} href={href}>
+      <ChakraLink {...props} as={GatsbyLink} to={href}>
         {children}
       </ChakraLink>
     );
   }
 
   return (
-    <ChakraLink {...props} as={GatsbyLink} to={href}>
+    <ChakraLink
+      {...props}
+      href={href}
+      isExternal={!(href.startsWith("#") || href.startsWith("mailto:"))}
+    >
       {children}
     </ChakraLink>
   );
