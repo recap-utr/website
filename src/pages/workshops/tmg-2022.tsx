@@ -1,67 +1,20 @@
-import {
-  Center,
-  ListItem,
-  SimpleGrid,
-  Stack,
-  Text,
-  UnorderedList,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
+import { Center, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, Li, P, Ul } from "../../components/BodyComponents";
 import ButtonLink from "../../components/ButtonLink";
-import Icon from "../../components/Icon";
 import Layout from "../../components/Layout";
 import Link from "../../components/Link";
+import Paper from "../../components/Paper";
+import Papers from "../../components/Papers";
 import Profiles from "../../components/Profiles";
 import { Seo } from "../../components/Seo";
 import Table from "../../components/Table";
 import Tag from "../../components/Tag";
+import { Tags } from "../../components/Tags";
 
 const TITLE = "Workshop on Text Mining and Generation (TMG) at KI 2022";
-
-interface PaperProps {
-  title: string;
-  authors: Array<string>;
-  presentationUrl?: string;
-  paperUrl?: string;
-}
-
-const Paper: React.FC<PaperProps> = ({
-  title,
-  authors,
-  presentationUrl,
-  paperUrl,
-}) => {
-  return (
-    <ListItem>
-      <Text>{authors.join(", ")}</Text>
-      <Text mt={1}>
-        <i>{title}</i>
-      </Text>
-      {(presentationUrl || paperUrl) && (
-        <Text mt={1}>
-          {paperUrl && (
-            <Link href={paperUrl}>
-              <Icon icon="file-lines" />
-              &nbsp;Read paper
-            </Link>
-          )}
-          {presentationUrl && paperUrl && <span style={{ marginRight: 10 }} />}
-          {presentationUrl && (
-            <Link href={presentationUrl}>
-              <Icon icon="person-chalkboard" />
-              &nbsp;View presentation
-            </Link>
-          )}
-        </Text>
-      )}
-    </ListItem>
-  );
-};
 
 interface Props {
   members: {
@@ -106,22 +59,14 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         </AlertDescription>
       </Box>
     </Alert> */}
-      <Wrap justify="center" mt={10} mb={10} spacingX={5} spacingY={2}>
-        <WrapItem>
-          <Tag icon="calendar-alt">September 19, 2022</Tag>
-        </WrapItem>
-        <WrapItem>
-          <Tag icon="clock">10:00–16:00</Tag>
-        </WrapItem>
-        <WrapItem>
-          <Tag icon="info-circle">
-            Co-located with <A href="https://ki2022.gi.de/">KI 2022</A>
-          </Tag>
-        </WrapItem>
-        <WrapItem>
-          <Tag icon="location-dot">Virtual (Hosted in Trier, Germany)</Tag>
-        </WrapItem>
-      </Wrap>
+      <Tags>
+        <Tag icon="calendar-alt">September 19, 2022</Tag>
+        <Tag icon="clock">10:00–16:00</Tag>
+        <Tag icon="info-circle">
+          Co-located with <A href="https://ki2022.gi.de/">KI 2022</A>
+        </Tag>
+        <Tag icon="location-dot">Virtual (Hosted in Trier, Germany)</Tag>
+      </Tags>
       {/* <Center mb={10}>
         <ButtonLink
           color="orange"
@@ -155,32 +100,32 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "11:45",
             <>
               <Text as="b">Session 1: Original Papers</Text>
-              <UnorderedList mt={2} spacing={3}>
+              <Papers wrapperProps={{ mt: 3 }}>
                 <Paper
                   title="German to English: Fake News Detection with Machine Translation"
                   authors={["Jin Liu", "Steffen Thoma"]}
-                  presentationUrl={presentations["61"]}
-                  paperUrl={papers["61"]}
+                  slides={presentations["61"]}
+                  preprint={papers["61"]}
                 />
                 <Paper
                   title="Inductive Linking and Ranking in Knowledge Graphs of Varying Scale"
                   authors={["Felix Hamann", "Adrian Ulges", "Maurice Falk"]}
-                  presentationUrl={presentations["78"]}
-                  paperUrl={papers["78"]}
+                  slides={presentations["78"]}
+                  preprint={papers["78"]}
                 />
                 <Paper
                   title="Explaining Hatespeech Detection with Model-Agnostic Methods: A Case Study on Twitter Dataset"
                   authors={["Durgesh Nandini", "Ute Schmid"]}
-                  presentationUrl={presentations["90"]}
-                  paperUrl={papers["90"]}
+                  slides={presentations["90"]}
+                  preprint={papers["90"]}
                 />
                 <Paper
                   title="Comparing Unsupervised Algorithms to Construct Argument Graphs"
                   authors={["Mirko Lenz", "Premtim Sahitaj", "Lorik Dumani"]}
-                  presentationUrl={presentations["91"]}
-                  paperUrl={papers["91"]}
+                  slides={presentations["91"]}
+                  preprint={papers["91"]}
                 />
-              </UnorderedList>
+              </Papers>
             </>,
           ],
           ["11:45", "13:30", <>Break</>],
@@ -197,7 +142,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "15:45",
             <>
               <Text as="b">Session 2: Invited Talks</Text>
-              <UnorderedList mt={2} spacing={3}>
+              <Papers wrapperProps={{ mt: 3 }}>
                 <Paper
                   title="Extractive Snippet Generation for Arguments"
                   authors={[
@@ -205,7 +150,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                     "Nick Düsterhus",
                     "Henning Wachsmuth",
                   ]}
-                  paperUrl="https://webis.de/downloads/publications/papers/alshomary_2020b.pdf"
+                  paper="https://webis.de/downloads/publications/papers/alshomary_2020b.pdf"
                 />
                 <Paper
                   title="Abstractive Snippet Generation"
@@ -216,14 +161,14 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                     "Matthias Hagen",
                     "Martin Potthast",
                   ]}
-                  paperUrl="https://webis.de/downloads/publications/papers/chen_2020a.pdf"
+                  paper="https://webis.de/downloads/publications/papers/chen_2020a.pdf"
                 />
                 <Paper
                   title="An End-to-end Model for Entity-level Relation Extraction using Multi-instance Learning"
                   authors={["Markus Eberts", "Adrian Ulges"]}
-                  paperUrl="https://aclanthology.org/2021.eacl-main.319"
+                  paper="https://aclanthology.org/2021.eacl-main.319"
                 />
-              </UnorderedList>
+              </Papers>
             </>,
           ],
           ["15:45", "16:15", <b>Closing and Open Panel Discussion</b>],
@@ -351,7 +296,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
 export const query = graphql`
   query {
     presentations: allFile(
-      filter: { relativeDirectory: { eq: "workshops/2022/tmg/presentations" } }
+      filter: { relativeDirectory: { eq: "workshops/tmg-2022/presentations" } }
     ) {
       nodes {
         publicURL
@@ -359,7 +304,7 @@ export const query = graphql`
       }
     }
     papers: allFile(
-      filter: { relativeDirectory: { eq: "workshops/2022/tmg/papers" } }
+      filter: { relativeDirectory: { eq: "workshops/tmg-2022/papers" } }
     ) {
       nodes {
         publicURL
