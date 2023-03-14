@@ -1,4 +1,5 @@
 import { GatsbyConfig } from "gatsby";
+import path from "path";
 
 const config: GatsbyConfig = {
   trailingSlash: "always",
@@ -45,6 +46,13 @@ const config: GatsbyConfig = {
       },
     },
     "@chakra-ui/gatsby-plugin",
+    {
+      resolve: "@floris.groenendijk/gatsby-plugin-nginx-redirect",
+      options: {
+        inputConfigFile: path.resolve("nginx.conf"),
+        outputConfigFile: path.resolve("nginx.out.conf"),
+      },
+    },
   ],
 };
 

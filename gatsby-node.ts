@@ -3,29 +3,20 @@ import { GatsbyNode } from "gatsby";
 import { createFilePath } from "gatsby-source-filesystem";
 require("@citation-js/plugin-bibtex");
 
-const stripTrailingSlash = (text: string) => {
-  return text.endsWith("/") ? text.slice(0, -1) : text;
-};
-
 export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   const { createRedirect } = actions;
 
+  // Always omit the trailing slash from the source URL, but include it in the target URL.
   const redirects = {
     "/2022-tmg-workshop": "/workshops/tmg-2022/",
     "/workshops/2022/tmg": "/workshops/tmg-2022/",
   };
 
-  Object.entries(redirects).forEach(([_fromPath, toPath]) => {
-    const normalizedFrom = stripTrailingSlash(_fromPath);
-    const fromPathVariants = [normalizedFrom, `${normalizedFrom}/`];
-
-    fromPathVariants.forEach((fromPath) => {
-      createRedirect({
-        fromPath,
-        toPath,
-        isPermanent: true,
-        redirectInBrowser: true,
-      });
+  Object.entries(redirects).forEach(([fromPath, toPath]) => {
+    createRedirect({
+      fromPath,
+      toPath,
+      isPermanent: true,
     });
   });
 };

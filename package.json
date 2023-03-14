@@ -22,6 +22,7 @@
     "@citation-js/plugin-bibtex": "^0.6.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@floris.groenendijk/gatsby-plugin-nginx-redirect": "^0.0.14",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
