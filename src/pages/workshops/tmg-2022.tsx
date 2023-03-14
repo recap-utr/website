@@ -11,17 +11,17 @@ import {
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { A, H2, H3, Li, P, Ul } from "../../../components/BodyComponents";
-import ButtonLink from "../../../components/ButtonLink";
-import Icon from "../../../components/Icon";
-import Layout from "../../../components/Layout";
-import Link from "../../../components/Link";
-import Profiles from "../../../components/Profiles";
-import { Seo } from "../../../components/Seo";
-import Table from "../../../components/Table";
-import Tag from "../../../components/Tag";
+import { A, H2, H3, Li, P, Ul } from "../../components/BodyComponents";
+import ButtonLink from "../../components/ButtonLink";
+import Icon from "../../components/Icon";
+import Layout from "../../components/Layout";
+import Link from "../../components/Link";
+import Profiles from "../../components/Profiles";
+import { Seo } from "../../components/Seo";
+import Table from "../../components/Table";
+import Tag from "../../components/Tag";
 
-const TITLE = "Workshop on Text Mining and Generation (TMG) at KI-2022";
+const TITLE = "Workshop on Text Mining and Generation (TMG) at KI 2022";
 
 interface PaperProps {
   title: string;
@@ -115,7 +115,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         </WrapItem>
         <WrapItem>
           <Tag icon="info-circle">
-            Co-located with <A href="https://ki2022.gi.de/">KI-2022</A>
+            Co-located with <A href="https://ki2022.gi.de/">KI 2022</A>
           </Tag>
         </WrapItem>
         <WrapItem>
@@ -286,7 +286,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           icon="section"
           href="https://ki2022.gi.de/calls/call-for-papers"
         >
-          KI-2022 Guidelines
+          KI 2022 Guidelines
         </ButtonLink>
         <ButtonLink icon="book" href="https://github.com/gi-ev/LNI">
           GI-LNI Template
@@ -313,7 +313,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             width={400}
             height={400}
             transformOptions={{ cropFocus: "centre" }}
-            src="../../../images/gurevych.jpg"
+            src="../../data/avatars/gurevych.jpg"
             alt="Prof. Dr. Iryna Gurevych"
           />
         </Center>
@@ -351,10 +351,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
 export const query = graphql`
   query {
     presentations: allFile(
-      filter: {
-        sourceInstanceName: { eq: "assets" }
-        relativeDirectory: { eq: "workshops/2022/tmg/presentations" }
-      }
+      filter: { relativeDirectory: { eq: "workshops/2022/tmg/presentations" } }
     ) {
       nodes {
         publicURL
@@ -362,10 +359,7 @@ export const query = graphql`
       }
     }
     papers: allFile(
-      filter: {
-        sourceInstanceName: { eq: "assets" }
-        relativeDirectory: { eq: "workshops/2022/tmg/papers" }
-      }
+      filter: { relativeDirectory: { eq: "workshops/2022/tmg/papers" } }
     ) {
       nodes {
         publicURL
@@ -394,7 +388,7 @@ export const query = graphql`
 export const Head: HeadFC<Props> = ({ data }) => (
   <Seo
     title={TITLE}
-    description="One-day workshop co-located with KI-2022 concerned with transforming text data between structured and unstructured representations."
+    description="One-day workshop co-located with KI 2022 concerned with transforming text data between structured and unstructured representations."
   />
 );
 

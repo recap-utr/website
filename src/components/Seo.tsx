@@ -34,10 +34,7 @@ export function Seo({ description, title }: Props) {
   const { site, logo } = useStaticQuery(
     graphql`
       query {
-        logo: file(
-          relativePath: { eq: "logo.png" }
-          sourceInstanceName: { eq: "assets" }
-        ) {
+        logo: file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
             resize {
               src

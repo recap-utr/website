@@ -66,12 +66,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "assets" }
-        relativeDirectory: { eq: "publications" }
-      }
-    ) {
+    allFile(filter: { relativeDirectory: { eq: "publications" } }) {
       nodes {
         publicURL
         name

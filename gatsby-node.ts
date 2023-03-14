@@ -11,7 +11,8 @@ export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
   const { createRedirect } = actions;
 
   const redirects = {
-    "/2022-tmg-workshop": "/workshops/2022/tmg/",
+    "/2022-tmg-workshop": "/workshops/tmg-2022/",
+    "/workshops/2022/tmg": "/workshops/tmg-2022/",
   };
 
   Object.entries(redirects).forEach(([_fromPath, toPath]) => {

@@ -1,19 +1,19 @@
 - name: Prof. Dr. Ralph Bergmann
   email: bergmann@uni-trier.de
-  avatar: ../images/bergmann.jpg
+  avatar: ./avatars/bergmann.jpg
 
 - name: Prof. Dr. Ralf Schenkel
   email: schenkel@uni-trier.de
-  avatar: ../images/schenkel.jpg
+  avatar: ./avatars/schenkel.jpg
 
 - name: Mirko Lenz
   email: info@mirko-lenz.de
-  avatar: ../images/lenz.jpg
+  avatar: ./avatars/lenz.jpg
 
 - name: Dr. Lorik Dumani
   email: dumani@uni-trier.de
-  avatar: ../images/dumani.jpg
+  avatar: ./avatars/dumani.jpg
 
 - name: Premtim Sahitaj
   email: sahitaj@uni-trier.de
-  avatar: ../images/sahitaj.jpg
+  avatar: ./avatars/sahitaj.jpg

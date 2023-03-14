@@ -16,7 +16,7 @@ import { IconName, IconPrefix } from "@fortawesome/fontawesome-common-types";
 import { useLocation } from "@reach/router";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import logo from "../assets/logo.svg";
+import logo from "../data/logo.svg";
 import Icon from "./Icon";
 import Link from "./Link";
 

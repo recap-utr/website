@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "./src/assets/logo.png",
+        icon: "./src/data/logo.png",
       },
     },
     {
@@ -30,20 +30,6 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "assets",
-        path: "./src/assets/",
-      },
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
