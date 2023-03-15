@@ -88,8 +88,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         Digital text data is produced across different sources such as social media. Simultaneously, very often only structured data is available.
         Within CBR, cases of the former are usually handled by using methods of Textual CBR, while Process-Oriented CBR addresses on the latter type of data.
         By leveraging their generic research origins, i.e., text mining and text generation approaches, we aim to diminish this gap.
-        The target of <I>text mining</I> (TM) is to extract (useful) structured information from unstructured text.
-        In contrast, <I>text generation</I> (TG) attempts to (automatically) create text from structured information or distributed knowledge.
+        The target of <I>text mining</I> is to extract (useful) structured information from unstructured text.
+        In contrast, <I>text generation</I> attempts to (automatically) create text from structured information or distributed knowledge.
         The goal of the TMG workshop is to bring these two perspectives together by eliciting research paper submissions that aim for applying text mining and generation approach in the context of CBR.
         We welcome any submission from any domain aiming to contribute to to close this gap.
       </P>
@@ -140,7 +140,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           <H3>
             <AccordionButton>
               <Box as="b" flex={1} textAlign="left">
-                Click here to learn more about the impact of TMG for CBR
+                Learn more about the impact of TMG for CBR…
               </Box>
               <AccordionIcon />
             </AccordionButton>
