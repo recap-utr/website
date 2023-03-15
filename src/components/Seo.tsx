@@ -26,6 +26,7 @@ interface StaticQuery {
       title: string;
       description: string;
       siteUrl: string;
+      googleSiteVerification: string;
     };
   };
 }
@@ -46,6 +47,7 @@ export function Seo({ description, title }: Props) {
             title
             description
             siteUrl
+            googleSiteVerification
           }
         }
       }
@@ -69,6 +71,10 @@ export function Seo({ description, title }: Props) {
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={logoUrl} />
       {/* <meta name="twitter:url" content={seo.url} /> */}
+      <meta
+        name="google-site-verification"
+        content={site.siteMetadata.googleSiteVerification}
+      />
     </>
   );
 }

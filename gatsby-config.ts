@@ -6,6 +6,7 @@ const config: GatsbyConfig = {
     title: `ReCAP Trier University`,
     description: `Research project at Trier University that is funded by DFG and concerned with building an argumentation machine.`,
     siteUrl: `https://recap.uni-trier.de`,
+    googleSiteVerification: "5J3ie7V600FTqQeFo9o6zKgcTMvNXkctPhKiABIdjzE",
   },
   plugins: [
     // "gatsby-plugin-netlify",
