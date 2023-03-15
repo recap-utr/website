@@ -14,7 +14,7 @@ import Table from "../../components/Table";
 import Tag from "../../components/Tag";
 import { Tags } from "../../components/Tags";
 
-const TITLE = "Workshop on Text Mining and Generation (TMG) at KI 2022";
+const TITLE = "Workshop on Text Mining and Generation (TMG) @ KI 2022";
 
 interface Props {
   members: {
@@ -258,7 +258,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             width={400}
             height={400}
             transformOptions={{ cropFocus: "centre" }}
-            src="../../data/avatars/gurevych.jpg"
+            src="../../assets/avatars/gurevych.jpg"
             alt="Prof. Dr. Iryna Gurevych"
           />
         </Center>
@@ -311,7 +311,7 @@ export const query = graphql`
         name
       }
     }
-    members: allCommitteeMembersYaml {
+    members: allTmg2022CommitteeYaml {
       nodes {
         avatar {
           childImageSharp {

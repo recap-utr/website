@@ -1,59 +1,59 @@
 - name: Mirko Lenz
   email: info@mirko-lenz.de
   affiliation: Trier University
-  avatar: ../../avatars/lenz.jpg
+  avatar: ../assets/avatars/lenz.jpg
 
 - name: Lorik Dumani
   email: dumani@uni-trier.de
   affiliation: Trier University
-  avatar: ../../avatars/dumani.jpg
+  avatar: ../assets/avatars/dumani.jpg
 
 - name: Philipp Heinrich
   email: philipp.heinrich@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../../avatars/heinrich.jpg
+  avatar: ../assets/avatars/heinrich.jpg
 
 - name: Nathan Dykes
   email: nathan.dykes@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../../avatars/dykes.jpg
+  avatar: ../assets/avatars/dykes.jpg
 
 - name: Merlin Humml
   email: merlin.humml@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../../avatars/humml.png
+  avatar: ../assets/avatars/humml.png
 
 - name: Alexander Bondarenko
   email: alexander.bondarenko@informatik.uni-halle.de
   affiliation: Martin Luther University Halle-Wittenberg
-  avatar: ../../avatars/bondarenko.jpg
+  avatar: ../assets/avatars/bondarenko.jpg
 
 - name: Shahbaz Syed
   email: shahbaz.syed@uni-leipzig.de
   affiliation: Leipzig University
-  avatar: ../../avatars/syed.jpg
+  avatar: ../assets/avatars/syed.jpg
 
 - name: Prof. Dr. Adrian Ulges
   email: adrian.ulges@hs-rm.de
   affiliation: RheinMain University of Applied Sciences
-  avatar: ../../avatars/ulges.jpg
+  avatar: ../assets/avatars/ulges.jpg
 
 - name: Prof. Dr. Stephanie Evert
   email: stephanie.evert@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../../avatars/evert.jpg
+  avatar: ../assets/avatars/evert.jpg
 
 - name: Prof. Dr. Lutz Schröder
   email: lutz.schroeder@fau.de
   affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
-  avatar: ../../avatars/schroeder.jpg
+  avatar: ../assets/avatars/schroeder.jpg
 
 - name: Prof. Dr. Achim Rettinger
   email: rettinger@uni-trier.de
   affiliation: Trier University
-  avatar: ../../avatars/rettinger.jpg
+  avatar: ../assets/avatars/rettinger.jpg
 
 - name: Prof. Dr. Martin Vogt
   email: vogt@hochschule-trier.de
   affiliation: Trier University of Applied Sciences
-  avatar: ../../avatars/vogt.jpg
+  avatar: ../assets/avatars/vogt.jpg

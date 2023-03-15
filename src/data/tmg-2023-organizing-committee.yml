@@ -1,0 +1,16 @@
+- name: Mirko Lenz
+  email: info@mirko-lenz.de
+  affiliation: Trier University
+  avatar: ../assets/avatars/lenz.jpg
+- name: Lorik Dumani
+  email: dumani@uni-trier.de
+  affiliation: Trier University
+  avatar: ../assets/avatars/dumani.jpg
+- name: Premtim Sahitaj
+  email: sahitaj@uni-trier.de
+  affiliation: Trier University
+  avatar: ../assets/avatars/sahitaj.jpg
+- name: Jordan Robinson
+  email: J.Robinson9@liverpool.ac.uk
+  affiliation: University of Liverpool
+  avatar: ../assets/avatars/robinson.jpg

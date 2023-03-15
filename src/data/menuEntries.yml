@@ -9,6 +9,9 @@
 - title: Publications
   url: "/publications"
   icon: book
+- title: Workshops
+  icon: person-chalkboard
 - title: TMG 2022
   url: /workshops/tmg-2022
-  icon: person-chalkboard
+- title: TMG 2023
+  url: /workshops/tmg-2023
