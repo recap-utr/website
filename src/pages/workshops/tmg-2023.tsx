@@ -113,7 +113,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         limited to, the following:
       </P>
       {/* prettier-ignore */}
-      <Ul style={{columns: 2}}>
+      <Ul style={{columns: 2, columnGap: 25}}>
         <Li>Text mining for argumentation.</Li>
         <Li>Case-based knowledge representation of text.</Li>
         <Li>Similarity-based retrieval and ranking.</Li>
@@ -208,7 +208,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <H2>Program Committee</H2>
       Currently under construction, we will provide the list of PC members as
       soon as possible.
-      {/* <Ul style={{columns: 2}}>
+      {/* <Ul style={{columns: 2, columnGap: 25}}>
         {data.programCommittee.nodes.map((member) => (
           <Li key={member.name}>
             {member.name} ({member.affiliation})
