@@ -171,8 +171,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         Authors can submit the following types of papers:
       </P>
       <Ul>
-        <Li>Full Paper (10–16 pages, excluding references)</Li>
-        <Li>Short Paper (5–9 pages, excluding references)</Li>
+        <Li>Full Paper (10–16 pages, including references)</Li>
+        <Li>Short Paper (5–9 pages, including references)</Li>
       </Ul>
       <Stack direction={{ base: "column", sm: "row" }} mt={5} mb={5}>
         {/* <ButtonLink
@@ -205,7 +205,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "11:00",
             "12:00",
             <b>
-              <i>Optional:</i> Invited talk with discussion
+              <i>Currently pending:</i> Invited talk with discussion
             </b>,
           ],
           ["12:00", "13:00", <>Lunch break</>],
