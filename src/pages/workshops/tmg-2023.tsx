@@ -1,8 +1,17 @@
-import { Stack } from "@chakra-ui/react";
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  Box,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
-import { A, H2, H3, Li, P, Ul } from "../../components/BodyComponents";
+import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
 import ButtonLink from "../../components/ButtonLink";
 import Layout from "../../components/Layout";
 import Profiles from "../../components/Profiles";
@@ -96,14 +105,15 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         ]}
       />
       <H2>Call for Papers</H2>
-      {/* prettier-ignore */}
       <P>
-        We welcome any submissions that deal with transforming the representation of data between structured and unstructured formats in the context of CBR-based systems:
-        (applied) research papers, theoretical papers, user studies or prospective papers.
-        Topics include, but are not limited to, the following:
+        We welcome any submissions that deal with transforming the
+        representation of data between structured and unstructured formats in
+        the context of CBR-based systems: (applied) research papers, theoretical
+        papers, user studies or prospective papers. Topics include, but are not
+        limited to, the following:
       </P>
       {/* prettier-ignore */}
-      <Ul>
+      <Ul style={{columns: 2}}>
         <Li>Text mining for argumentation.</Li>
         <Li>Case-based knowledge representation of text.</Li>
         <Li>Similarity-based retrieval and ranking.</Li>
@@ -119,10 +129,38 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Li>Snippet generation for search results.</Li>
         <Li>CBR for Deep Learning with Text.</Li>
       </Ul>
+      <Accordion
+        allowToggle
+        // borderWidth="medium"
+        borderRadius="xl"
+        bg={useColorModeValue("teal.100", "teal.900")}
+      >
+        <AccordionItem border="none">
+          <H3>
+            <AccordionButton>
+              <Box as="b" flex={1} textAlign="left">
+                Click here to learn more about the impact of TMG for CBR
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </H3>
+          <AccordionPanel>
+            {/* prettier-ignore */}
+            <P>
+              Text mining (TM) and text generation (TG) are beneficial for most if not all stages of the classical R4-cycle:
+              During <I>retrieval</I>, TG can be employed to synthesize a structural representation, making it possible to utilize fine-grained similarity measures, whereas TM may be applied to add an efficient pre-filtering phase based on state-of-the-art natural language processing (NLP) techniques like contextualized embeddings.
+              Performing correct adaptations as part of the <I>reuse</I> step is often challenging due to large amount of domain knowledge needed.
+              TM/TG can assist here by translating between structured information geared towards computers and natural language that is easily understandable by humans, making knowledge acquisition simpler and more scalable.
+              The <I>revision</I> step is often necessary to identify potential faulty cases resulting from ill-implemented solutions but also trend-shifts.
+              Providing domains expert with meta information in form of explanations is crucial to secure the utility of systems and their case bases.
+              In fact, Explainable CBR (XCBR) is getting increased interest from the CBR community.
+              The generation of explanations has become an important tool against the increasing complexity of black-box models.
+              TM can be utilized to identify irregular trends in the data, model, or the outputs, while TG can supplement the creation of explanations which in turn facilities informed actions by humans.
+            </P>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
       <H3>Submission Information</H3>
-      {/* <P>
-      Details regarding the submission procedure have yet to be determined and will be posted on this website as soon as possible.
-    </P> */}
       {/* prettier-ignore */}
       <P>
         The submission of the papers should be in accordance to the CEUR-WS style and have to be submitted via EasyChair.
@@ -170,7 +208,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <H2>Program Committee</H2>
       Currently under construction, we will provide the list of PC members as
       soon as possible.
-      {/* <Ul>
+      {/* <Ul style={{columns: 2}}>
         {data.programCommittee.nodes.map((member) => (
           <Li key={member.name}>
             {member.name} ({member.affiliation})
