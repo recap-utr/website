@@ -11,6 +11,6 @@ RUN npm run build
 
 FROM nginxinc/nginx-unprivileged:stable-alpine
 COPY --chown=nginx --from=builder /app/public /usr/share/nginx/html
-COPY --chown=nginx nginx.out.conf /etc/nginx/conf.d/default.conf
+COPY --chown=nginx nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]

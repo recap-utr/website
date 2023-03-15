@@ -3,24 +3,6 @@ import { GatsbyNode } from "gatsby";
 import { createFilePath } from "gatsby-source-filesystem";
 require("@citation-js/plugin-bibtex");
 
-export const createPages: GatsbyNode["createPages"] = async ({ actions }) => {
-  const { createRedirect } = actions;
-
-  // Always omit the trailing slash from the source URL, but include it in the target URL.
-  const redirects = {
-    "/2022-tmg-workshop": "/workshops/tmg-2022/",
-    "/workshops/2022/tmg": "/workshops/tmg-2022/",
-  };
-
-  Object.entries(redirects).forEach(([fromPath, toPath]) => {
-    createRedirect({
-      fromPath,
-      toPath,
-      isPermanent: true,
-    });
-  });
-};
-
 export const onCreateNode: GatsbyNode["onCreateNode"] = async ({
   node,
   actions,
