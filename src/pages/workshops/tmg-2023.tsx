@@ -79,7 +79,9 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Tag icon="clock">Full-day</Tag>
         <Tag icon="info-circle">
           Co-located with{" "}
-          <A href="https://www.comp.rgu.ac.uk/ICCBR23/">ICCBR 2023</A>
+          <I>
+            <A href="https://www.comp.rgu.ac.uk/ICCBR23/">ICCBR 2023</A>
+          </I>
         </Tag>
         <Tag icon="location-dot">Aberdeen, Scotland</Tag>
       </Tags>
@@ -114,7 +116,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         limited to, the following:
       </P>
       {/* prettier-ignore */}
-      <Ul style={{columns: 2, columnGap: 25}}>
+      <Ul sx={{columns: {base: 1, sm: 2}, columnGap: 25}}>
         <Li>Text mining for argumentation.</Li>
         <Li>Case-based knowledge representation of text.</Li>
         <Li>Similarity-based retrieval and ranking.</Li>
@@ -172,7 +174,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Li>Full Paper (10–16 pages, excluding references)</Li>
         <Li>Short Paper (5–9 pages, excluding references)</Li>
       </Ul>
-      <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
+      <Stack direction={{ base: "column", sm: "row" }} mt={5} mb={5}>
         {/* <ButtonLink
           color="blue"
           icon="circle-check"
@@ -180,7 +182,11 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         >
           Submit
         </ButtonLink> */}
-        <ButtonLink icon="book" href={data.paperTemplate.publicURL}>
+        <ButtonLink
+          color="blue"
+          icon="book"
+          href={data.paperTemplate.publicURL}
+        >
           Paper Template
         </ButtonLink>
         <ButtonLink icon="section" href="https://ceur-ws.org/HOWTOSUBMIT.html">
@@ -195,7 +201,13 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           ["09:00", "09:10", <b>Opening</b>],
           ["09:10", "10:40", <b>Session 1</b>],
           ["10:40", "11:00", <>Coffee break</>],
-          ["11:00", "12:00", <b>Invited talk with discussion</b>],
+          [
+            "11:00",
+            "12:00",
+            <b>
+              <i>Optional:</i> Invited talk with discussion
+            </b>,
+          ],
           ["12:00", "13:00", <>Lunch break</>],
           ["13:00", "14:30", <b>Session 2</b>],
           ["14:30", "14:50", <>Coffee break</>],
@@ -209,7 +221,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <H2>Program Committee</H2>
       Currently under construction, we will provide the list of PC members as
       soon as possible.
-      {/* <Ul style={{columns: 2, columnGap: 25}}>
+      {/* <Ul>
         {data.programCommittee.nodes.map((member) => (
           <Li key={member.name}>
             {member.name} ({member.affiliation})
