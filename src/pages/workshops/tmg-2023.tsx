@@ -95,6 +95,36 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         The goal of the TMG workshop is to bring these two perspectives together by eliciting research paper submissions that aim for applying text mining and generation approach in the context of CBR.
         We welcome any submission from any domain aiming to contribute to to close this gap.
       </P>
+      <Accordion
+        allowToggle
+        borderRadius="xl"
+        bg={useColorModeValue("teal.100", "teal.900")}
+      >
+        <AccordionItem border="none">
+          <H3>
+            <AccordionButton>
+              <Box as="b" flex={1} textAlign="left">
+                Learn more about the impact of TMG for CBR…
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </H3>
+          <AccordionPanel>
+            {/* prettier-ignore */}
+            <P>
+              Text mining (TM) and text generation (TG) are beneficial for most if not all stages of the classical R4-cycle:
+              During <I>retrieval</I>, TG can be employed to synthesize a structural representation, making it possible to utilize fine-grained similarity measures, whereas TM may be applied to add an efficient pre-filtering phase based on state-of-the-art natural language processing (NLP) techniques like contextualized embeddings.
+              Performing correct adaptations as part of the <I>reuse</I> step is often challenging due to large amount of domain knowledge needed.
+              TM/TG can assist here by translating between structured information geared towards computers and natural language that is easily understandable by humans, making knowledge acquisition simpler and more scalable.
+              The <I>revision</I> step is often necessary to identify potential faulty cases resulting from ill-implemented solutions but also trend-shifts.
+              Providing domains expert with meta information in form of explanations is crucial to secure the utility of systems and their case bases.
+              In fact, Explainable CBR (XCBR) is getting increased interest from the CBR community.
+              The generation of explanations has become an important tool against the increasing complexity of black-box models.
+              TM can be utilized to identify irregular trends in the data, model, or the outputs, while TG can supplement the creation of explanations which in turn facilities informed actions by humans.
+            </P>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
       <H2>Important Dates</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
@@ -132,37 +162,6 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Li>Snippet generation for search results.</Li>
         <Li>CBR for Deep Learning with Text.</Li>
       </Ul>
-      <Accordion
-        allowToggle
-        // borderWidth="medium"
-        borderRadius="xl"
-        bg={useColorModeValue("teal.100", "teal.900")}
-      >
-        <AccordionItem border="none">
-          <H3>
-            <AccordionButton>
-              <Box as="b" flex={1} textAlign="left">
-                Learn more about the impact of TMG for CBR…
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </H3>
-          <AccordionPanel>
-            {/* prettier-ignore */}
-            <P>
-              Text mining (TM) and text generation (TG) are beneficial for most if not all stages of the classical R4-cycle:
-              During <I>retrieval</I>, TG can be employed to synthesize a structural representation, making it possible to utilize fine-grained similarity measures, whereas TM may be applied to add an efficient pre-filtering phase based on state-of-the-art natural language processing (NLP) techniques like contextualized embeddings.
-              Performing correct adaptations as part of the <I>reuse</I> step is often challenging due to large amount of domain knowledge needed.
-              TM/TG can assist here by translating between structured information geared towards computers and natural language that is easily understandable by humans, making knowledge acquisition simpler and more scalable.
-              The <I>revision</I> step is often necessary to identify potential faulty cases resulting from ill-implemented solutions but also trend-shifts.
-              Providing domains expert with meta information in form of explanations is crucial to secure the utility of systems and their case bases.
-              In fact, Explainable CBR (XCBR) is getting increased interest from the CBR community.
-              The generation of explanations has become an important tool against the increasing complexity of black-box models.
-              TM can be utilized to identify irregular trends in the data, model, or the outputs, while TG can supplement the creation of explanations which in turn facilities informed actions by humans.
-            </P>
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
       <H3>Submission Information</H3>
       {/* prettier-ignore */}
       <P>
