@@ -98,10 +98,10 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <H2>Important Dates</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
-        caption="All dates are calculated at 11:59 AoE"
+        caption="All dates are calculated at 11:59 pm AoE"
         columns={["Date", "Description"]}
         rows={[
-          ["May 22, 2023", "Paper submission"],
+          ["May 10, 2023", "Paper submission"],
           ["June 12, 2023", "Paper notification"],
           ["June 26, 2023", "Camera-ready copy"],
           ["July 17, 2023", "Workshop Date"],
