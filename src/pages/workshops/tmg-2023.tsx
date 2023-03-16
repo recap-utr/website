@@ -134,7 +134,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           ["May 10, 2023", "Paper submission"],
           ["June 12, 2023", "Paper notification"],
           ["June 26, 2023", "Camera-ready copy"],
-          ["July 17, 2023", "Workshop Date"],
+          ["July 17, 2023", "Workshop date"],
         ]}
       />
       <H2>Call for Papers</H2>
