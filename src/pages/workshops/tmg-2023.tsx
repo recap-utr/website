@@ -186,10 +186,16 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           icon="book"
           href={data.paperTemplate.publicURL}
         >
-          Paper Template
+          Paper template
         </ButtonLink>
         <ButtonLink icon="section" href="https://ceur-ws.org/HOWTOSUBMIT.html">
-          CEUR Guidelines
+          CEUR guidelines
+        </ButtonLink>
+        <ButtonLink
+          icon="circle-info"
+          href="https://www.comp.rgu.ac.uk/ICCBR23/"
+        >
+          ICCBR website
         </ButtonLink>
       </Stack>
       <H2>Tentiative Workshop Schedule</H2>
