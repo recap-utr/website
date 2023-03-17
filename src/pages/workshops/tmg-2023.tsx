@@ -128,7 +128,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <H2>Important Dates</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
-        caption="All dates are calculated at 11:59 pm AoE"
+        caption="All dates are calculated at 11:59 pm UTC"
         columns={["Date", "Description"]}
         rows={[
           ["May 10, 2023", "Paper submission"],
@@ -204,21 +204,19 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         columns={["Start", "End", "Event"]}
         rows={[
           ["09:00", "09:10", <b>Opening</b>],
-          ["09:10", "10:40", <b>Session 1</b>],
-          ["10:40", "11:00", <>Coffee break</>],
+          ["09:10", "11:00", <b>Session 1</b>],
+          ["11:00", "11:30", <>Coffee break</>],
           [
-            "11:00",
-            "12:00",
+            "11:30",
+            "13:00",
             <b>
               <i>Currently pending:</i> Invited talk with discussion
             </b>,
           ],
-          ["12:00", "13:00", <>Lunch break</>],
-          ["13:00", "14:30", <b>Session 2</b>],
-          ["14:30", "14:50", <>Coffee break</>],
-          ["14:50", "16:20", <b>Session 3 with panel discussion</b>],
-          ["16:20", "16:30", <>Coffee break</>],
-          ["16:30", "18:00", <b>Poster session and socializing</b>],
+          ["13:00", "14:00", <>Lunch break</>],
+          ["14:00", "15:30", <b>Session 2 with panel discussion</b>],
+          ["15:30", "16:00", <>Coffee break</>],
+          ["16:00", "17:30", <b>Poster session and socializing</b>],
         ]}
       />
       <H2>Organizing Committee</H2>
