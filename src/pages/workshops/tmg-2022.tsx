@@ -2,7 +2,7 @@ import { Center, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { graphql, HeadFC, PageProps } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { A, H2, H3, Li, P, Ul } from "../../components/BodyComponents";
+import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
 import ButtonLink from "../../components/ButtonLink";
 import Layout from "../../components/Layout";
 import Link from "../../components/Link";
@@ -63,7 +63,10 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Tag icon="calendar-alt">September 19, 2022</Tag>
         <Tag icon="clock">10:00–16:00</Tag>
         <Tag icon="info-circle">
-          Co-located with <A href="https://ki2022.gi.de/">KI 2022</A>
+          Co-located with{" "}
+          <I>
+            <A href="https://ki2022.gi.de/">KI 2022</A>
+          </I>
         </Tag>
         <Tag icon="location-dot">Virtual (Hosted in Trier, Germany)</Tag>
       </Tags>
