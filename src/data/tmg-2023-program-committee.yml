@@ -1,9 +1,12 @@
-- name: Adrian Ulges
-  email: adrian.ulges@hs-rm.de
-  affiliation: RheinMain University of Applied Sciences
-- name: Wei-Fan Chen
-  email: cwf@mail.upb.de
-  affiliation: Paderborn University
 - name: Alexander Bondarenko
   email: alexander.bondarenko@uni-jena.de
   affiliation: Jena University
+- name: Wei-Fan Chen
+  email: cwf@mail.upb.de
+  affiliation: Paderborn University
+- name: Prof. Dr. Lutz Schröder
+  email: lutz.schroeder@fau.de
+  affiliation: Friedrich-Alexander-Universität Erlangen-Nürnberg
+- name: Prof. Dr. Adrian Ulges
+  email: adrian.ulges@hs-rm.de
+  affiliation: RheinMain University of Applied Sciences
