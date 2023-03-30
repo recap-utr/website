@@ -198,7 +198,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           ICCBR website
         </ButtonLink>
       </Stack>
-      <H2>Tentiative Workshop Schedule</H2>
+      <H2>Preliminary Workshop Schedule</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
         columns={["Start", "End", "Event"]}
@@ -221,16 +221,14 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       />
       <H2>Organizing Committee</H2>
       <Profiles profiles={data.organizingCommittee.nodes} />
-      <H2>Program Committee</H2>
-      Currently under construction, we will provide the list of PC members as
-      soon as possible.
-      {/* <Ul>
+      <H2>Preliminary Program Committee</H2>
+      <Ul>
         {data.programCommittee.nodes.map((member) => (
           <Li key={member.name}>
             {member.name} ({member.affiliation})
           </Li>
         ))}
-      </Ul> */}
+      </Ul>
     </Layout>
   );
 };
@@ -270,7 +268,7 @@ export const query = graphql`
         name
       }
     }
-    programCommittee: allTmg2023ProgramCommitteeYaml(sort: { name: ASC }) {
+    programCommittee: allTmg2023ProgramCommitteeYaml {
       nodes {
         affiliation
         name
