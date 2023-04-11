@@ -8,7 +8,7 @@ import {
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { graphql, HeadFC, PageProps } from "gatsby";
+import { HeadFC, PageProps, graphql } from "gatsby";
 import { ImageDataLike } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
@@ -173,14 +173,14 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Li>Full Paper (10–16 pages, including references)</Li>
         <Li>Short Paper (5–9 pages, including references)</Li>
       </Ul>
+      <P>
+        At least one author of each accepted paper must register for the
+        workshop and present the contribution.
+      </P>
       <Stack direction={{ base: "column", sm: "row" }} mt={5} mb={5}>
-        {/* <ButtonLink
-          color="blue"
-          icon="circle-check"
-          href="https://easychair.org/conferences/?conf=iccbr2023"
-        >
-          Submit
-        </ButtonLink> */}
+        <ButtonLink color="blue" icon="circle-check" href="#">
+          Submit (coming soon)
+        </ButtonLink>
         <ButtonLink
           color="blue"
           icon="book"
