@@ -37,12 +37,12 @@
     "gatsby-transformer-yaml": "^5.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rehype-react": "^7.1.2",
+    "rehype-react": "^7.2.0",
     "unified": "^10.1.2"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.34",
+    "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "typescript": "^5.0.4"
   }
