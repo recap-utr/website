@@ -13,7 +13,7 @@
       systems = nixpkgs.lib.systems.flakeExposed;
       perSystem = { pkgs, ... }: {
         devenv.shells.default = {
-          name = "recap-website";
+          enterShell = "npm install";
           languages.javascript = {
             enable = true;
             package = pkgs.nodejs-18_x;
