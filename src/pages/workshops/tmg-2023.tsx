@@ -4,12 +4,17 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
   Box,
+  Center,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HeadFC, PageProps, graphql } from "gatsby";
-import { ImageDataLike } from "gatsby-plugin-image";
+import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
 import ButtonLink from "../../components/ButtonLink";
@@ -64,16 +69,17 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
 
   return (
     <Layout title={TITLE}>
-      {/* <Alert mt={10} mb={5} status="info">
-      <AlertIcon />
-      <Box>
-        <AlertTitle>Schedule Available</AlertTitle>
-        <AlertDescription>
-          The final schedule has been added to our website and contains a list
-          of accepted papers.
-        </AlertDescription>
-      </Box>
-    </Alert> */}
+      <Alert mt={10} mb={5} status="info">
+        <AlertIcon />
+        <Box>
+          <AlertTitle>Keynote confirmed</AlertTitle>
+          <AlertDescription>
+            We are excited to share that Prof. Dr. Chris Reed will hold a
+            keynote at our workshop. The topic of the talk will be published
+            soon, so stay tuned for updates!
+          </AlertDescription>
+        </Box>
+      </Alert>
       <Tags>
         <Tag icon="calendar-alt">July 17, 2023</Tag>
         <Tag icon="clock">Full-day</Tag>
@@ -210,7 +216,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "11:30",
             "13:00",
             <b>
-              <i>Currently pending:</i> Invited talk with discussion
+              <A href="#keynote">Keynote by Prof. Dr. Chris Reed</A> with
+              discussion
             </b>,
           ],
           ["13:00", "14:00", <>Lunch break</>],
@@ -219,6 +226,35 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           ["16:00", "17:30", <b>Poster session and socializing</b>],
         ]}
       />
+      <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
+      <Stack spacing={10} direction={{ base: "column", md: "row" }}>
+        <Center flex="0 0 256px">
+          <StaticImage
+            width={256}
+            height={256}
+            transformOptions={{ cropFocus: "centre" }}
+            src="../../assets/avatars/reed.jpg"
+            alt="Prof. Dr. Chris Reed"
+          />
+        </Center>
+        {/* prettier-ignore */}
+        <P>
+          Chris Reed is Professor of Computer Science and Philosophy at the University of Dundee in Scotland, where he heads the <A href="https://www.arg.tech">Centre for Argument Technology</A>.
+          Chris has been working at the overlap between argumentation theory and artificial intelligence for two decades and specialises in the theory, practice and commercialisation of argument technology.
+          He has won over £6.5m of funding from government, charity and commercial sources, has over 200 peer-reviewed papers in the area including five books, and has served as a director of several technology companies.
+          {/* He has also been instrumental in the development of the Argument Interchange Format (AIF), an international standard for computational work in the area;
+          he is spear-heading the major engineering effort behind the Argument Web;
+          and he is a founding editor of the Journal of Argument & Computation.
+          He also provides evidence to various committees at Westminster and his media appearances and writing have reached an audience in excess of 30 million people. */}
+          <H3>Topic: To be Announced</H3>
+        </P>
+      </Stack>
+      {/* prettier-ignore */}
+      {/* <H3>Topic: To be Announced</H3> */}
+      {/* prettier-ignore */}
+      {/* <P>
+        To be announced.
+      </P> */}
       <H2>Organizing Committee</H2>
       <Profiles profiles={data.organizingCommittee.nodes} />
       <H2>Preliminary Program Committee</H2>
