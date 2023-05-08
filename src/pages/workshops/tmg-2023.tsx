@@ -72,11 +72,22 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <Alert mt={10} mb={5} status="info">
         <AlertIcon />
         <Box>
+          <AlertTitle>Deadline extension</AlertTitle>
+          <AlertDescription>
+            We have updated our paper submission deadline to May 22, 2023.
+            Please note that this is a hard deadline and no further extensions
+            will be granted. The submission link will be added soon.
+          </AlertDescription>
+        </Box>
+      </Alert>
+      <Alert mt={5} mb={5} status="info">
+        <AlertIcon />
+        <Box>
           <AlertTitle>Keynote confirmed</AlertTitle>
           <AlertDescription>
             We are excited to share that Prof. Dr. Chris Reed will hold a
-            keynote at our workshop. The topic of the talk will be published
-            soon, so stay tuned for updates!
+            keynote at our workshop. Stay tuned for an update on the topic of
+            the talk.
           </AlertDescription>
         </Box>
       </Alert>
@@ -137,7 +148,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         caption="All dates are calculated at 11:59 pm UTC"
         columns={["Date", "Description"]}
         rows={[
-          ["May 10, 2023", "Paper submission"],
+          ["May 22, 2023", "Paper submission"],
           ["June 12, 2023", "Paper notification"],
           ["June 26, 2023", "Camera-ready copy"],
           ["July 17, 2023", "Workshop date"],
