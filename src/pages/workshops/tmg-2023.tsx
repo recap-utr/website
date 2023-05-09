@@ -76,7 +76,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           <AlertDescription>
             We have updated our paper submission deadline to May 22, 2023.
             Please note that this is a hard deadline and no further extensions
-            will be granted. The submission link will be added soon.
+            will be granted.
           </AlertDescription>
         </Box>
       </Alert>
@@ -183,7 +183,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       {/* prettier-ignore */}
       <P>
         The submission of the papers should be in accordance to the CEUR-WS style and have to be submitted via EasyChair.
-        The workshop is running a single-blind review process.
+        Please select the track <strong>W4 - Text Mining and Generation</strong>.
         Authors can submit the following types of papers:
       </P>
       <Ul>
@@ -195,24 +195,18 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         workshop and present the contribution.
       </P>
       <Stack direction={{ base: "column", sm: "row" }} mt={5} mb={5}>
-        <ButtonLink color="blue" icon="circle-check" href="#">
-          Submit (coming soon)
-        </ButtonLink>
         <ButtonLink
           color="blue"
-          icon="book"
-          href={data.paperTemplate.publicURL}
+          icon="circle-check"
+          href="https://easychair.org/conferences/?conf=iccbr2023"
         >
+          Submit
+        </ButtonLink>
+        <ButtonLink icon="book" href={data.paperTemplate.publicURL}>
           Paper template
         </ButtonLink>
         <ButtonLink icon="section" href="https://ceur-ws.org/HOWTOSUBMIT.html">
           CEUR guidelines
-        </ButtonLink>
-        <ButtonLink
-          icon="circle-info"
-          href="https://www.comp.rgu.ac.uk/ICCBR23/"
-        >
-          ICCBR website
         </ButtonLink>
       </Stack>
       <H2>Preliminary Workshop Schedule</H2>
