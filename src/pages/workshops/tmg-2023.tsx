@@ -75,7 +75,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           <AlertTitle>Deadline extension</AlertTitle>
           <AlertDescription>
             We have updated our paper submission deadline to{" "}
-            <strong>May 22, 2023</strong>.
+            <strong>June 2, 2023</strong>. Please note that this is a{" "}
+            <strong>firm</strong> deadline.
           </AlertDescription>
         </Box>
       </Alert>
@@ -149,11 +150,11 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         rows={[
           [
             <span>
-              <s>May 10</s>&nbsp;&nbsp;May 22, 2023
+              <s>May 10</s>&nbsp;&nbsp;June 2, 2023
             </span>,
             "Paper submission",
           ],
-          ["June 12, 2023", "Paper notification"],
+          ["June 16, 2023", "Paper notification"],
           ["June 26, 2023", "Camera-ready copy"],
           ["July 17, 2023", "Workshop date"],
         ]}
