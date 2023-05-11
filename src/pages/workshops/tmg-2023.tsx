@@ -74,9 +74,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Box>
           <AlertTitle>Deadline extension</AlertTitle>
           <AlertDescription>
-            We have updated our paper submission deadline to May 22, 2023.
-            Please note that this is a hard deadline and no further extensions
-            will be granted.
+            We have updated our paper submission deadline to{" "}
+            <strong>May 22, 2023</strong>.
           </AlertDescription>
         </Box>
       </Alert>
@@ -85,9 +84,9 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Box>
           <AlertTitle>Keynote confirmed</AlertTitle>
           <AlertDescription>
-            We are excited to share that Prof. Dr. Chris Reed will hold a
-            keynote at our workshop. Stay tuned for an update on the topic of
-            the talk.
+            We are excited to share that <strong>Prof. Dr. Chris Reed</strong>{" "}
+            will hold a keynote at our workshop. Stay tuned for an update on the
+            topic of the talk.
           </AlertDescription>
         </Box>
       </Alert>
@@ -97,7 +96,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Tag icon="info-circle">
           Co-located with{" "}
           <I>
-            <A href="https://www.comp.rgu.ac.uk/ICCBR23/">ICCBR 2023</A>
+            <A href="https://www.iccbr2023.org">ICCBR 2023</A>
           </I>
         </Tag>
         <Tag icon="location-dot">Aberdeen, Scotland</Tag>
@@ -148,7 +147,12 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         caption="All dates are calculated at 11:59 pm UTC"
         columns={["Date", "Description"]}
         rows={[
-          ["May 22, 2023", "Paper submission"],
+          [
+            <span>
+              <s>May 10</s>&nbsp;&nbsp;May 22, 2023
+            </span>,
+            "Paper submission",
+          ],
           ["June 12, 2023", "Paper notification"],
           ["June 26, 2023", "Camera-ready copy"],
           ["July 17, 2023", "Workshop date"],
