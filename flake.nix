@@ -7,7 +7,7 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = nixpkgs.lib.systems.flakeExposed;
       perSystem = { pkgs, ... }: {
-        devShells.default = {
+        devShells.default = pkgs.mkShell {
           shellhook = "npm install";
           packages = with pkgs; [ nodejs-18_x ];
         };
