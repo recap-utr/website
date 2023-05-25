@@ -1,23 +1,15 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    devenv = {
-      url = "github:cachix/devenv";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = inputs@{ nixpkgs, flake-parts, devenv, ... }:
+  outputs = inputs@{ nixpkgs, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ devenv.flakeModule ];
       systems = nixpkgs.lib.systems.flakeExposed;
       perSystem = { pkgs, ... }: {
-        devenv.shells.default = {
-          enterShell = "npm install";
-          languages.javascript = {
-            enable = true;
-            package = pkgs.nodejs-18_x;
-          };
+        devShells.default = {
+          shellhook = "npm install";
+          packages = with pkgs; [ nodejs-18_x ];
         };
       };
     };
