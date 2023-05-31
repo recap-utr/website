@@ -1,15 +1,21 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default";
   };
-  outputs = inputs@{ nixpkgs, flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = nixpkgs.lib.systems.flakeExposed;
-      perSystem = { pkgs, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    flake-parts,
+    systems,
+    ...
+  }:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = import systems;
+      perSystem = {pkgs, ...}: {
         devShells.default = pkgs.mkShell {
           shellhook = "npm install";
-          packages = with pkgs; [ nodejs-18_x ];
+          packages = with pkgs; [nodejs-18_x];
         };
       };
     };
