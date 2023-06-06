@@ -17,7 +17,6 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
-import ButtonLink from "../../components/ButtonLink";
 import Layout from "../../components/Layout";
 import Profiles from "../../components/Profiles";
 import { Seo } from "../../components/Seo";
@@ -69,7 +68,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
 
   return (
     <Layout title={TITLE}>
-      <Alert mt={10} mb={5} status="info">
+      {/* <Alert mt={10} mb={5} status="info">
         <AlertIcon />
         <Box>
           <AlertTitle>Deadline extension</AlertTitle>
@@ -79,8 +78,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             <strong>firm</strong> deadline.
           </AlertDescription>
         </Box>
-      </Alert>
-      <Alert mt={5} mb={5} status="info">
+      </Alert> */}
+      <Alert mt={10} mb={5} status="info">
         <AlertIcon />
         <Box>
           <AlertTitle>Keynote confirmed</AlertTitle>
@@ -150,7 +149,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         rows={[
           [
             <span>
-              <s>May 10</s>&nbsp;&nbsp;June 2, 2023
+              <s>June 2, 2023</s>
             </span>,
             "Paper submission",
           ],
@@ -199,7 +198,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         At least one author of each accepted paper must register for the
         workshop and present the contribution.
       </P>
-      <Stack direction={{ base: "column", sm: "row" }} mt={5} mb={5}>
+      {/* <Stack direction={{ base: "column", sm: "row" }} mt={5} mb={5}>
         <ButtonLink
           color="blue"
           icon="circle-check"
@@ -213,7 +212,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <ButtonLink icon="section" href="https://ceur-ws.org/HOWTOSUBMIT.html">
           CEUR guidelines
         </ButtonLink>
-      </Stack>
+      </Stack> */}
       <H2>Preliminary Workshop Schedule</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
@@ -267,7 +266,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       </P> */}
       <H2>Organizing Committee</H2>
       <Profiles profiles={data.organizingCommittee.nodes} />
-      <H2>Preliminary Program Committee</H2>
+      <H2>Program Committee</H2>
       <Ul>
         {data.programCommittee.nodes.map((member) => (
           <Li key={member.name}>
