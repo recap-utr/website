@@ -17,7 +17,10 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
+import ButtonLink from "../../components/ButtonLink";
 import Layout from "../../components/Layout";
+import Paper from "../../components/Paper";
+import Papers from "../../components/Papers";
 import Profiles from "../../components/Profiles";
 import { Seo } from "../../components/Seo";
 import Table from "../../components/Table";
@@ -62,9 +65,9 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
   // const presentations = Object.fromEntries(
   //   data.presentations.nodes.map((file) => [file.name, file.publicURL])
   // );
-  // const papers = Object.fromEntries(
-  //   data.papers.nodes.map((file) => [file.name, file.publicURL])
-  // );
+  const papers = Object.fromEntries(
+    data.papers.nodes.map((file) => [file.name, file.publicURL])
+  );
 
   return (
     <Layout title={TITLE}>
@@ -101,6 +104,15 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         </Tag>
         <Tag icon="location-dot">Aberdeen, Scotland</Tag>
       </Tags>
+      <Center mb={10}>
+        <ButtonLink
+          color="orange"
+          icon="pen-to-square"
+          href="https://payment.iccbr2023.org"
+        >
+          Register Now
+        </ButtonLink>
+      </Center>
       {/* prettier-ignore */}
       <P>
         Digital text data is produced across different sources such as social media. Simultaneously, very often only structured data is available.
@@ -141,21 +153,53 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
+      <H2>Accepted Papers</H2>
+      <Papers wrapperProps={{ mt: 3 }}>
+        <Paper
+          title="Trust me, I am an Expert: Predicting the Credibility of Experts for Statements"
+          authors={[
+            "Markus Nilles",
+            "Lorik Dumani",
+            "Björn Metzler",
+            "Ralf Schenkel",
+          ]}
+          // slides={presentations["86"]}
+          preprint={papers["86"]}
+        />
+        <Paper
+          title="Knowledge Base Question Answering by Transformer-Based Graph Pattern Scoring"
+          authors={["Marcel Lamott", "Jörn Hees", "Adrian Ulges"]}
+          // slides={presentations["88"]}
+          preprint={papers["88"]}
+        />
+        <Paper
+          title="Argument-Mining from Podcasts Using ChatGPT"
+          authors={["Mircea-Luchian Pojoni", "Lorik Dumani", "Ralf Schenkel"]}
+          // slides={presentations["90"]}
+          preprint={papers["90"]}
+        />
+        <Paper
+          title="Invited Talk: End-to-end Case-Based Reasoning for Commonsense Knowledge Base Completion"
+          authors={[
+            "Zonglin Yang",
+            "Xinya Du",
+            "Erik Cambria",
+            "Claire Cardie",
+          ]}
+          // slides={presentations["93"]}
+          preprint={papers["93"]}
+        />
+      </Papers>
       <H2>Important Dates</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
         caption="All dates are calculated at 11:59 pm UTC"
         columns={["Date", "Description"]}
         rows={[
-          [
-            <span>
-              <s>June 2, 2023</s>
-            </span>,
-            "Paper submission",
-          ],
-          ["June 16, 2023", "Paper notification"],
-          ["June 26, 2023", "Camera-ready copy"],
-          ["July 17, 2023", "Workshop date"],
+          [<s>June 2, 2023</s>, "Paper submission"],
+          [<s>June 16, 2023</s>, "Paper notification"],
+          [<>June 26, 2023</>, "Camera-ready copy"],
+          [<>July 17, 2023</>, "Workshop date"],
         ]}
       />
       <H2>Call for Papers</H2>
@@ -218,11 +262,9 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         props={{ variant: "striped", size: "sm" }}
         columns={["Start", "End", "Event"]}
         rows={[
-          ["09:00", "09:10", <b>Opening</b>],
-          ["09:10", "11:00", <b>Session 1</b>],
-          ["11:00", "11:30", <>Coffee break</>],
+          ["11:30", "11:40", <>Opening</>],
           [
-            "11:30",
+            "11:40",
             "13:00",
             <b>
               <A href="#keynote">Keynote by Prof. Dr. Chris Reed</A> with
@@ -230,9 +272,9 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             </b>,
           ],
           ["13:00", "14:00", <>Lunch break</>],
-          ["14:00", "15:30", <b>Session 2 with panel discussion</b>],
+          ["14:00", "15:30", <b>Presentation session</b>],
           ["15:30", "16:00", <>Coffee break</>],
-          ["16:00", "17:30", <b>Poster session and socializing</b>],
+          ["16:00", "17:30", <b>Invited talk and panel discussion</b>],
         ]}
       />
       <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
@@ -288,14 +330,14 @@ export const query = graphql`
     #     name
     #   }
     # }
-    # papers: allFile(
-    #   filter: { relativeDirectory: { eq: "workshops/tmg-2023/papers" } }
-    # ) {
-    #   nodes {
-    #     publicURL
-    #     name
-    #   }
-    # }
+    papers: allFile(
+      filter: { relativeDirectory: { eq: "workshops/tmg-2023/papers" } }
+    ) {
+      nodes {
+        publicURL
+        name
+      }
+    }
 
     organizingCommittee: allTmg2023OrganizingCommitteeYaml {
       nodes {
