@@ -1,5 +1,5 @@
 {
-  "name": "recap",
+  "name": "recap-website",
   "version": "1.0.0",
   "private": true,
   "description": "Website of the ReCAP project at Trier University",
@@ -26,6 +26,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "framer-motion": "^10.12.16",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
@@ -44,6 +45,7 @@
     "@types/node": "^20.3.1",
     "@types/react": "^18.2.12",
     "@types/react-dom": "^18.2.5",
+    "sharp": "^0.32.1",
     "typescript": "^5.1.3"
   }
 }
