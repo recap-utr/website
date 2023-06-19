@@ -31,32 +31,23 @@
       }: let
         npmlock2nix = import inputs.npmlock2nix {inherit pkgs;};
         dockerPort = "8080";
-        rewrites = import ./rewrites.nix;
-        mkRewrite = source: target: "rewrite ${source} ${target} permanent;";
-        nginxConf = pkgs.writeText "nginx.conf" ''
-          user nobody nobody;
-          daemon off;
-          error_log /dev/stdout info;
-          pid /dev/null;
-          events {}
-          http {
-            access_log /dev/stdout;
-            include ${pkgs.nginx}/conf/mime.types;
-            default_type application/octet-stream;
-            port_in_redirect off;
-            absolute_redirect off;
-            # optimisation
-            sendfile on;
-            tcp_nopush on;
-            tcp_nodelay on;
-            keepalive_timeout 65;
-            server {
-              server_name localhost;
-              listen ${dockerPort};
-              root ${self'.packages.default};
-              error_page 404 /404/;
-              try_files $uri $uri/ =404;
-              ${lib.concatLines (lib.mapAttrsToList mkRewrite rewrites)}
+        rewrites =
+          lib.mapAttrsToList
+          (source: target: "redir ${source} ${target} permanent")
+          (import ./rewrites.nix);
+        caddyfile = pkgs.writeText "caddyfile" ''
+          {
+            admin off
+            auto_https off
+            persist_config off
+          }
+          :${dockerPort} {
+            root * ${self'.packages.default}
+            encode gzip
+            ${lib.concatLines rewrites}
+            try_files {path} {path}/ /404/
+            file_server {
+              index index.html
             }
           }
         '';
@@ -91,6 +82,12 @@
               nativeBuildInputs = with pkgs; [pkg-config python3];
             };
           };
+          server = pkgs.writeShellApplication {
+            name = "server";
+            text = ''
+              ${lib.getExe pkgs.caddy} run --config ${caddyfile} --adapter caddyfile
+            '';
+          };
           docker = pkgs.dockerTools.buildLayeredImage {
             name = "recap-website";
             tag = "latest";
@@ -98,16 +95,12 @@
             contents = [
               pkgs.dockerTools.fakeNss
             ];
-            extraCommands = ''
-              mkdir -p tmp
-              mkdir -p var/log/nginx
-              mkdir -p var/cache/nginx
-            '';
             config = {
-              cmd = [(lib.getExe pkgs.nginx) "-c" nginxConf];
+              entrypoint = [(lib.getExe self'.packages.server)];
               exposedPorts = {
                 "${dockerPort}/tcp" = {};
               };
+              user = "nobody:nobody";
             };
           };
         };
