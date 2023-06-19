@@ -30,18 +30,18 @@
         ...
       }: let
         npmlock2nix = import inputs.npmlock2nix {inherit pkgs;};
-        dockerPort = "8080";
         rewrites =
           lib.mapAttrsToList
           (source: target: "redir ${source} ${target} permanent")
           (import ./rewrites.nix);
+        caddyport = "8080";
         caddyfile = pkgs.writeText "caddyfile" ''
           {
             admin off
             auto_https off
             persist_config off
           }
-          :${dockerPort} {
+          :${caddyport} {
             root * ${self'.packages.default}
             encode gzip
             ${lib.concatLines rewrites}
@@ -98,7 +98,7 @@
             config = {
               entrypoint = [(lib.getExe self'.packages.server)];
               exposedPorts = {
-                "${dockerPort}/tcp" = {};
+                "${caddyport}/tcp" = {};
               };
               user = "nobody:nobody";
             };
