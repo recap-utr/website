@@ -190,6 +190,61 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           preprint={papers["93"]}
         />
       </Papers>
+      <H2>Workshop Schedule</H2>
+      <P>
+        The TMG workshop will be held together with the{" "}
+        <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>. The
+        technical sessions are expected to run in parallel, the keynote and
+        panel discussion will be joint events.
+      </P>
+      <Table
+        props={{ variant: "striped", size: "sm" }}
+        columns={["Start", "End", "Event"]}
+        rows={[
+          ["11:30", "11:40", <>Opening</>],
+          [
+            "11:40",
+            "13:00",
+            <b>
+              <A href="#keynote">Keynote by Prof. Dr. Chris Reed</A> with
+              discussion
+            </b>,
+          ],
+          ["13:00", "14:00", <>Lunch break</>],
+          ["14:00", "15:30", <b>Technical session</b>],
+          ["15:30", "16:00", <>Coffee break</>],
+          ["16:00", "17:30", <b>Invited talk and panel discussion</b>],
+        ]}
+      />
+      <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
+      <Stack spacing={10} direction={{ base: "column", md: "row" }}>
+        <Center flex="0 0 256px">
+          <StaticImage
+            width={256}
+            height={256}
+            transformOptions={{ cropFocus: "centre" }}
+            src="../../assets/avatars/reed.jpg"
+            alt="Prof. Dr. Chris Reed"
+          />
+        </Center>
+        {/* prettier-ignore */}
+        <P>
+          Chris Reed is Professor of Computer Science and Philosophy at the University of Dundee in Scotland, where he heads the <A href="https://www.arg.tech">Centre for Argument Technology</A>.
+          Chris has been working at the overlap between argumentation theory and artificial intelligence for two decades and specialises in the theory, practice and commercialisation of argument technology.
+          He has won over £6.5m of funding from government, charity and commercial sources, has over 200 peer-reviewed papers in the area including five books, and has served as a director of several technology companies.
+          {/* He has also been instrumental in the development of the Argument Interchange Format (AIF), an international standard for computational work in the area;
+          he is spear-heading the major engineering effort behind the Argument Web;
+          and he is a founding editor of the Journal of Argument & Computation.
+          He also provides evidence to various committees at Westminster and his media appearances and writing have reached an audience in excess of 30 million people. */}
+          <H3>Topic: To be Announced</H3>
+        </P>
+      </Stack>
+      {/* prettier-ignore */}
+      {/* <H3>Topic: To be Announced</H3> */}
+      {/* prettier-ignore */}
+      {/* <P>
+        To be announced.
+      </P> */}
       <H2>Important Dates</H2>
       <Table
         props={{ variant: "striped", size: "sm" }}
@@ -257,55 +312,6 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           CEUR guidelines
         </ButtonLink>
       </Stack> */}
-      <H2>Preliminary Workshop Schedule</H2>
-      <Table
-        props={{ variant: "striped", size: "sm" }}
-        columns={["Start", "End", "Event"]}
-        rows={[
-          ["11:30", "11:40", <>Opening</>],
-          [
-            "11:40",
-            "13:00",
-            <b>
-              <A href="#keynote">Keynote by Prof. Dr. Chris Reed</A> with
-              discussion
-            </b>,
-          ],
-          ["13:00", "14:00", <>Lunch break</>],
-          ["14:00", "15:30", <b>Presentation session</b>],
-          ["15:30", "16:00", <>Coffee break</>],
-          ["16:00", "17:30", <b>Invited talk and panel discussion</b>],
-        ]}
-      />
-      <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
-      <Stack spacing={10} direction={{ base: "column", md: "row" }}>
-        <Center flex="0 0 256px">
-          <StaticImage
-            width={256}
-            height={256}
-            transformOptions={{ cropFocus: "centre" }}
-            src="../../assets/avatars/reed.jpg"
-            alt="Prof. Dr. Chris Reed"
-          />
-        </Center>
-        {/* prettier-ignore */}
-        <P>
-          Chris Reed is Professor of Computer Science and Philosophy at the University of Dundee in Scotland, where he heads the <A href="https://www.arg.tech">Centre for Argument Technology</A>.
-          Chris has been working at the overlap between argumentation theory and artificial intelligence for two decades and specialises in the theory, practice and commercialisation of argument technology.
-          He has won over £6.5m of funding from government, charity and commercial sources, has over 200 peer-reviewed papers in the area including five books, and has served as a director of several technology companies.
-          {/* He has also been instrumental in the development of the Argument Interchange Format (AIF), an international standard for computational work in the area;
-          he is spear-heading the major engineering effort behind the Argument Web;
-          and he is a founding editor of the Journal of Argument & Computation.
-          He also provides evidence to various committees at Westminster and his media appearances and writing have reached an audience in excess of 30 million people. */}
-          <H3>Topic: To be Announced</H3>
-        </P>
-      </Stack>
-      {/* prettier-ignore */}
-      {/* <H3>Topic: To be Announced</H3> */}
-      {/* prettier-ignore */}
-      {/* <P>
-        To be announced.
-      </P> */}
       <H2>Organizing Committee</H2>
       <Profiles profiles={data.organizingCommittee.nodes} />
       <H2>Program Committee</H2>
