@@ -193,9 +193,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       <H2>Workshop Schedule</H2>
       <P>
         The TMG workshop will be held together with the{" "}
-        <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>. The
-        technical sessions are expected to run in parallel, the keynote and
-        panel discussion will be joint events.
+        <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>.
       </P>
       <Table
         props={{ variant: "striped", size: "sm" }}
@@ -211,9 +209,9 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             </b>,
           ],
           ["13:00", "14:00", <>Lunch break</>],
-          ["14:00", "15:30", <b>Technical session</b>],
+          ["14:00", "15:30", <b>Session 1</b>],
           ["15:30", "16:00", <>Coffee break</>],
-          ["16:00", "17:30", <b>Invited talk and panel discussion</b>],
+          ["16:00", "17:30", <b>Session 2</b>],
         ]}
       />
       <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
