@@ -212,6 +212,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           ["14:00", "15:30", <b>Session 1</b>],
           ["15:30", "16:00", <>Coffee break</>],
           ["16:00", "17:30", <b>Session 2</b>],
+          ["17:30", "18:00", <>Invited talk</>],
         ]}
       />
       <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
