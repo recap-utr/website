@@ -11,6 +11,7 @@ import {
   Box,
   Center,
   Stack,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HeadFC, PageProps, graphql } from "gatsby";
@@ -153,50 +154,15 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
-      <H2>Accepted Papers</H2>
-      <Papers wrapperProps={{ mt: 3 }}>
-        <Paper
-          title="Trust me, I am an Expert: Predicting the Credibility of Experts for Statements"
-          authors={[
-            "Markus Nilles",
-            "Lorik Dumani",
-            "Björn Metzler",
-            "Ralf Schenkel",
-          ]}
-          // slides={presentations["86"]}
-          preprint={papers["86"]}
-        />
-        <Paper
-          title="Knowledge Base Question Answering by Transformer-Based Graph Pattern Scoring"
-          authors={["Marcel Lamott", "Jörn Hees", "Adrian Ulges"]}
-          // slides={presentations["88"]}
-          preprint={papers["88"]}
-        />
-        <Paper
-          title="Argument-Mining from Podcasts Using ChatGPT"
-          authors={["Mircea-Luchian Pojoni", "Lorik Dumani", "Ralf Schenkel"]}
-          // slides={presentations["90"]}
-          preprint={papers["90"]}
-        />
-        <Paper
-          title="Invited Talk: End-to-end Case-Based Reasoning for Commonsense Knowledge Base Completion"
-          authors={[
-            "Zonglin Yang",
-            "Xinya Du",
-            "Erik Cambria",
-            "Claire Cardie",
-          ]}
-          // slides={presentations["93"]}
-          preprint={papers["93"]}
-        />
-      </Papers>
-      <H2>Workshop Schedule</H2>
+      <H2>Workshop Schedule and Accepted Papers</H2>
       <P>
         The TMG workshop will be held together with the{" "}
-        <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>.
+        <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>. Each
+        accepted paper will have 15–20 minutes for presentation and 10 minutes
+        for discussion.
       </P>
       <Table
-        props={{ variant: "striped", size: "sm" }}
+        props={{ variant: "striped", size: "sm", mt: 5 }}
         columns={["Start", "End", "Event"]}
         rows={[
           ["11:30", "11:40", <>Opening</>],
@@ -209,10 +175,100 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             </b>,
           ],
           ["13:00", "14:00", <>Lunch break</>],
-          ["14:00", "15:30", <b>Session 1</b>],
+          [
+            "14:00",
+            "15:30",
+            <>
+              <Text as="b">Session 1: BEAR papers</Text>
+              <Papers wrapperProps={{ mt: 3 }}>
+                <Paper
+                  title="Using Deep Reinforcement Learning for the Adaptation of Semantic Workflows"
+                  authors={[
+                    "Florian Brand",
+                    "Katharina Lott",
+                    "Lukas Malburg",
+                    "Maximilian Hoffmann",
+                    "Ralph Bergmann",
+                  ]}
+                  // slides={presentations["86"]}
+                  // preprint={papers["86"]}
+                />
+                <Paper
+                  title="Modeling and Using Complex IoT Time Series Data in Case-Based Reasoning: From Application Scenarios to Implementations"
+                  authors={[
+                    "Lukas Malburg",
+                    "Alexander Schultheis",
+                    "Ralph Bergmann",
+                  ]}
+                  // slides={presentations["88"]}
+                  // preprint={papers["88"]}
+                />
+                <Paper
+                  title="Working with Ambiguous Case Representations"
+                  authors={["Joseph Kendall-Morwick"]}
+                  // slides={presentations["90"]}
+                  // preprint={papers["90"]}
+                />
+              </Papers>
+            </>,
+          ],
           ["15:30", "16:00", <>Coffee break</>],
-          ["16:00", "17:30", <b>Session 2</b>],
-          ["17:30", "18:00", <>Invited talk</>],
+          [
+            "16:00",
+            "17:30",
+            <>
+              <Text as="b">Session 2: TMG papers</Text>
+              <Papers wrapperProps={{ mt: 3 }}>
+                <Paper
+                  title="Trust me, I am an Expert: Predicting the Credibility of Experts for Statements"
+                  authors={[
+                    "Markus Nilles",
+                    "Lorik Dumani",
+                    "Björn Metzler",
+                    "Ralf Schenkel",
+                  ]}
+                  // slides={presentations["86"]}
+                  preprint={papers["86"]}
+                />
+                <Paper
+                  title="Knowledge Base Question Answering by Transformer-Based Graph Pattern Scoring"
+                  authors={["Marcel Lamott", "Jörn Hees", "Adrian Ulges"]}
+                  // slides={presentations["88"]}
+                  preprint={papers["88"]}
+                />
+                <Paper
+                  title="Argument-Mining from Podcasts Using ChatGPT"
+                  authors={[
+                    "Mircea-Luchian Pojoni",
+                    "Lorik Dumani",
+                    "Ralf Schenkel",
+                  ]}
+                  // slides={presentations["90"]}
+                  preprint={papers["90"]}
+                />
+              </Papers>
+            </>,
+          ],
+          [
+            "17:30",
+            "18:00",
+            <>
+              <Text as="b">Invited talk:</Text>
+              <Text mt={2}>
+                <Paper
+                  title="Invited Talk: End-to-end Case-Based Reasoning for Commonsense Knowledge Base Completion"
+                  authors={[
+                    "Zonglin Yang",
+                    "Xinya Du",
+                    "Erik Cambria",
+                    "Claire Cardie",
+                  ]}
+                  // slides={presentations["93"]}
+                  preprint={papers["93"]}
+                />
+              </Text>
+            </>,
+          ],
         ]}
       />
       <H2 id="keynote">Keynote by Prof. Dr. Chris Reed</H2>
