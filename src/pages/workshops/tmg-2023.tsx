@@ -253,10 +253,10 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "17:30",
             "18:00",
             <>
-              <Text as="b">Invited talk:</Text>
+              <Text as="b">Invited talk</Text>
               <Text mt={2}>
                 <Paper
-                  title="Invited Talk: End-to-end Case-Based Reasoning for Commonsense Knowledge Base Completion"
+                  title="End-to-end Case-Based Reasoning for Commonsense Knowledge Base Completion"
                   authors={[
                     "Zonglin Yang",
                     "Xinya Du",
