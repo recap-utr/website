@@ -83,7 +83,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           </AlertDescription>
         </Box>
       </Alert> */}
-      <Alert mt={10} mb={5} status="info">
+      {/* <Alert mt={10} mb={5} status="info">
         <AlertIcon />
         <Box>
           <AlertTitle>Keynote confirmed</AlertTitle>
@@ -93,15 +93,22 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             topic of the talk.
           </AlertDescription>
         </Box>
+      </Alert> */}
+      <Alert mt={10} mb={5} status="info">
+        <AlertIcon />
+        <Box>
+          <AlertTitle>Proceedings published</AlertTitle>
+          <AlertDescription>
+            The proceedings of our workshop are now available on{" "}
+            <A href="http://ceur-ws.org/Vol-3438">CEUR</A>.
+          </AlertDescription>
+        </Box>
       </Alert>
       <Tags>
         <Tag icon="calendar-alt">July 17, 2023</Tag>
         <Tag icon="clock">Full-day</Tag>
         <Tag icon="info-circle">
-          Co-located with{" "}
-          <I>
-            <A href="https://www.iccbr2023.org">ICCBR 2023</A>
-          </I>
+          Co-located with <A href="https://www.iccbr2023.org">ICCBR 2023</A>
         </Tag>
         <Tag icon="location-dot">Aberdeen, Scotland</Tag>
       </Tags>
@@ -159,7 +166,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         The TMG workshop will be held together with the{" "}
         <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>. Each
         accepted paper will have 15–20 minutes for presentation and 10 minutes
-        for discussion.
+        for discussion. The proceedings are available on{" "}
+        <A href="http://ceur-ws.org/Vol-3438">CEUR</A>.
       </P>
       <Table
         props={{ variant: "striped", size: "sm", mt: 5 }}
@@ -179,7 +187,11 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "14:00",
             "15:30",
             <>
-              <Text as="b">Session 1: BEAR papers</Text>
+              <Text as="b">
+                <A href="https://ceur-ws.org/Vol-3438/xbearpreface.pdf">
+                  Session 1: BEAR papers
+                </A>
+              </Text>
               <Papers wrapperProps={{ mt: 3 }}>
                 <Paper
                   title="Using Deep Reinforcement Learning for the Adaptation of Semantic Workflows"
@@ -192,6 +204,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                   ]}
                   // slides={presentations["86"]}
                   // preprint={papers["86"]}
+                  paper="https://ceur-ws.org/Vol-3438/paper_05.pdf"
                 />
                 <Paper
                   title="Modeling and Using Complex IoT Time Series Data in Case-Based Reasoning: From Application Scenarios to Implementations"
@@ -202,12 +215,14 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                   ]}
                   // slides={presentations["88"]}
                   // preprint={papers["88"]}
+                  paper="https://ceur-ws.org/Vol-3438/paper_07.pdf"
                 />
                 <Paper
                   title="Working with Ambiguous Case Representations"
                   authors={["Joseph Kendall-Morwick"]}
                   // slides={presentations["90"]}
                   // preprint={papers["90"]}
+                  paper="https://ceur-ws.org/Vol-3438/paper_06.pdf"
                 />
               </Papers>
             </>,
@@ -217,7 +232,11 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "16:00",
             "17:30",
             <>
-              <Text as="b">Session 2: TMG papers</Text>
+              <Text as="b">
+                <A href="https://ceur-ws.org/Vol-3438/xtmgpreface.pdf">
+                  Session 2: TMG papers
+                </A>
+              </Text>
               <Papers wrapperProps={{ mt: 3 }}>
                 <Paper
                   title="Trust me, I am an Expert: Predicting the Credibility of Experts for Statements"
@@ -228,13 +247,15 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                     "Ralf Schenkel",
                   ]}
                   // slides={presentations["86"]}
-                  preprint={papers["86"]}
+                  // preprint={papers["86"]}
+                  paper="https://ceur-ws.org/Vol-3438/paper_09.pdf"
                 />
                 <Paper
                   title="Knowledge Base Question Answering by Transformer-Based Graph Pattern Scoring"
                   authors={["Marcel Lamott", "Jörn Hees", "Adrian Ulges"]}
                   // slides={presentations["88"]}
-                  preprint={papers["88"]}
+                  // preprint={papers["88"]}
+                  paper="https://ceur-ws.org/Vol-3438/paper_08.pdf"
                 />
                 <Paper
                   title="Argument-Mining from Podcasts Using ChatGPT"
@@ -244,7 +265,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                     "Ralf Schenkel",
                   ]}
                   // slides={presentations["90"]}
-                  preprint={papers["90"]}
+                  // preprint={papers["90"]}
+                  paper="https://ceur-ws.org/Vol-3438/paper_10.pdf"
                 />
               </Papers>
             </>,
@@ -264,7 +286,8 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                     "Claire Cardie",
                   ]}
                   // slides={presentations["93"]}
-                  preprint={papers["93"]}
+                  // preprint={papers["93"]}
+                  paper="https://aclanthology.org/2023.eacl-main.255.pdf"
                 />
               </Text>
             </>,
