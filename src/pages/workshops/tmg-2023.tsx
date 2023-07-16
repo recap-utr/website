@@ -18,7 +18,6 @@ import { HeadFC, PageProps, graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, I, Li, P, Ul } from "../../components/BodyComponents";
-import ButtonLink from "../../components/ButtonLink";
 import Layout from "../../components/Layout";
 import Paper from "../../components/Paper";
 import Papers from "../../components/Papers";
@@ -99,7 +98,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <Box>
           <AlertTitle>Proceedings published</AlertTitle>
           <AlertDescription>
-            The proceedings of our workshop are now available on{" "}
+            The proceedings of our workshop are now available at{" "}
             <A href="http://ceur-ws.org/Vol-3438">CEUR</A>.
           </AlertDescription>
         </Box>
@@ -112,7 +111,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         </Tag>
         <Tag icon="location-dot">Aberdeen, Scotland</Tag>
       </Tags>
-      <Center mb={10}>
+      {/* <Center mb={10}>
         <ButtonLink
           color="orange"
           icon="pen-to-square"
@@ -120,7 +119,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         >
           Register Now
         </ButtonLink>
-      </Center>
+      </Center> */}
       {/* prettier-ignore */}
       <P>
         Digital text data is produced across different sources such as social media. Simultaneously, very often only structured data is available.
@@ -166,7 +165,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         The TMG workshop will be held together with the{" "}
         <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>. Each
         accepted paper will have 15–20 minutes for presentation and 10 minutes
-        for discussion. The proceedings are available on{" "}
+        for discussion. The proceedings are available at{" "}
         <A href="http://ceur-ws.org/Vol-3438">CEUR</A>.
       </P>
       <Table
@@ -314,7 +313,6 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           he is spear-heading the major engineering effort behind the Argument Web;
           and he is a founding editor of the Journal of Argument & Computation.
           He also provides evidence to various committees at Westminster and his media appearances and writing have reached an audience in excess of 30 million people. */}
-          <H3>Topic: To be Announced</H3>
         </P>
       </Stack>
       {/* prettier-ignore */}
@@ -331,7 +329,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         rows={[
           [<s>June 2, 2023</s>, "Paper submission"],
           [<s>June 16, 2023</s>, "Paper notification"],
-          [<>June 26, 2023</>, "Camera-ready copy"],
+          [<s>June 26, 2023</s>, "Camera-ready copy"],
           [<>July 17, 2023</>, "Workshop date"],
         ]}
       />
