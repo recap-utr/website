@@ -48,6 +48,8 @@ export interface Props {
     given: string;
     family: string;
   };
+  annote?: string;
+  abstract?: string;
 }
 
 const Citation: React.FC<Props> = (props) => {
@@ -55,6 +57,11 @@ const Citation: React.FC<Props> = (props) => {
     isOpen: isBibtexOpen,
     onOpen: openBibtex,
     onClose: closeBibtex,
+  } = useDisclosure();
+  const {
+    isOpen: isAbstractOpen,
+    onOpen: openAbstract,
+    onClose: closeAbstract,
   } = useDisclosure();
   const formatAuthor = (author: Author) =>
     `${author.family} ${author.given.substring(0, 1)}`;
@@ -81,7 +88,12 @@ const Citation: React.FC<Props> = (props) => {
         {props.author.map(formatAuthor).join(", ")}
       </Text>
       {journal && <Text>{journal}</Text>}
-      <Stack direction="row">
+      {props.annote && (
+        <Text>
+          <b>{props.annote}</b>
+        </Text>
+      )}
+      <Stack direction="row" mt={1}>
         {props.fileUrl && (
           <ButtonLink href={props.fileUrl} icon="file-pdf">
             PDF
@@ -97,6 +109,9 @@ const Citation: React.FC<Props> = (props) => {
             Website
           </ButtonLink>
         )}
+        <Button onClick={openAbstract} leftIcon={<Icon icon="file-lines" />}>
+          Abstract
+        </Button>
         <Button onClick={openBibtex} leftIcon={<Icon icon="code" />}>
           BibTeX
         </Button>
@@ -106,11 +121,16 @@ const Citation: React.FC<Props> = (props) => {
         onClose={closeBibtex}
         citation={props}
       />
+      <AbstractModal
+        isOpen={isAbstractOpen}
+        onClose={closeAbstract}
+        citation={props}
+      />
     </Stack>
   );
 };
 
-interface BibtexModalProps {
+interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   citation: Props;
@@ -129,11 +149,23 @@ const cleanCitation: (props: Props) => Props = (props) => {
   );
 };
 
-const BibtexModal: React.FC<BibtexModalProps> = ({
-  isOpen,
-  onClose,
-  citation,
-}) => {
+const AbstractModal: React.FC<ModalProps> = ({ isOpen, onClose, citation }) => {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} size="4xl">
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>{citation.title}</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Text>{citation.abstract}</Text>
+        </ModalBody>
+      </ModalContent>
+      <ModalFooter />
+    </Modal>
+  );
+};
+
+const BibtexModal: React.FC<ModalProps> = ({ isOpen, onClose, citation }) => {
   const toast = useToast();
 
   let bibtex: string = citePlugins.output

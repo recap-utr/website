@@ -1,5 +1,5 @@
 import { Heading, Stack } from "@chakra-ui/react";
-import { graphql, HeadFC, PageProps } from "gatsby";
+import { HeadFC, PageProps, graphql } from "gatsby";
 import React from "react";
 import Citation, { Props as CitationProps } from "../components/Citation";
 import Layout from "../components/Layout";
@@ -97,6 +97,8 @@ export const query = graphql`
           given
           family
         }
+        annote
+        abstract
       }
     }
   }
