@@ -11,6 +11,7 @@ import {
   ModalOverlay,
   Stack,
   Text,
+  Wrap,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
@@ -93,7 +94,7 @@ const Citation: React.FC<Props> = (props) => {
           <b>{props.annote}</b>
         </Text>
       )}
-      <Stack direction="row" mt={1}>
+      <Wrap mt={1}>
         {props.fileUrl && (
           <ButtonLink href={props.fileUrl} icon="file-pdf">
             PDF
@@ -109,13 +110,15 @@ const Citation: React.FC<Props> = (props) => {
             Website
           </ButtonLink>
         )}
-        <Button onClick={openAbstract} leftIcon={<Icon icon="file-lines" />}>
-          Abstract
-        </Button>
+        {props.abstract && (
+          <Button onClick={openAbstract} leftIcon={<Icon icon="file-lines" />}>
+            Abstract
+          </Button>
+        )}
         <Button onClick={openBibtex} leftIcon={<Icon icon="code" />}>
           BibTeX
         </Button>
-      </Stack>
+      </Wrap>
       <BibtexModal
         isOpen={isBibtexOpen}
         onClose={closeBibtex}
@@ -159,8 +162,8 @@ const AbstractModal: React.FC<ModalProps> = ({ isOpen, onClose, citation }) => {
         <ModalBody>
           <Text>{citation.abstract}</Text>
         </ModalBody>
+        <ModalFooter />
       </ModalContent>
-      <ModalFooter />
     </Modal>
   );
 };
