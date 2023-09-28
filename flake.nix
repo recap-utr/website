@@ -29,6 +29,7 @@
         system,
         ...
       }: let
+        nodejs = pkgs.nodejs_18;
         npmlock2nix = import inputs.npmlock2nix {inherit pkgs;};
         rewrites =
           lib.mapAttrsToList
@@ -62,8 +63,10 @@
           });
         };
         devShells.default = pkgs.mkShell {
-          shellhook = "npm install";
-          packages = with pkgs; [nodejs-18_x];
+          shellHook = ''
+            ${lib.getExe' nodejs "npm"} install
+          '';
+          packages = [nodejs];
         };
         packages = {
           default = npmlock2nix.v2.build {
@@ -76,7 +79,7 @@
             # https://github.com/gatsbyjs/gatsby/issues/19555
             node_modules_mode = "copy";
             node_modules_attrs = {
-              nodejs = pkgs.nodejs-18_x;
+              inherit nodejs;
               # https://github.com/nix-community/npmlock2nix/issues/185
               buildInputs = with pkgs; [vips];
               nativeBuildInputs = with pkgs; [pkg-config python3];
