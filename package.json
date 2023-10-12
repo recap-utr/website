@@ -18,8 +18,8 @@
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^3.1.3",
     "@chakra-ui/react": "^2.8.1",
-    "@citation-js/core": "^0.6.8",
-    "@citation-js/plugin-bibtex": "^0.6.8",
+    "@citation-js/core": "^0.7.1",
+    "@citation-js/plugin-bibtex": "^0.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
