@@ -18,4 +18,4 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ github.token }}
-      - run: nix run .#dockerManifest --impure
+      - run: nix run .#dockerManifest --impure -L
