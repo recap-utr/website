@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "overrides": {
-    "supports-color": "^8"
+    "supports-color": "^9.0.0"
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^3.1.3",
