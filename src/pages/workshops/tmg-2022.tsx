@@ -1,9 +1,17 @@
-import { Center, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  Box,
+  Center,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import { HeadFC, PageProps, graphql } from "gatsby";
 import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { A, H2, H3, Li, P, Ul } from "../../components/BodyComponents";
-import ButtonLink from "../../components/ButtonLink";
 import Layout from "../../components/Layout";
 import Link from "../../components/Link";
 import Paper from "../../components/Paper";
@@ -49,16 +57,16 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
 
   return (
     <Layout title={TITLE}>
-      {/* <Alert mt={10} mb={5} status="info">
-      <AlertIcon />
-      <Box>
-        <AlertTitle>Schedule Available</AlertTitle>
-        <AlertDescription>
-          The final schedule has been added to our website and contains a list
-          of accepted papers.
-        </AlertDescription>
-      </Box>
-    </Alert> */}
+      <Alert mt={10} mb={5} status="info">
+        <AlertIcon />
+        <Box>
+          <AlertTitle>Proceedings published</AlertTitle>
+          <AlertDescription>
+            The proceedings of our workshop are now available at{" "}
+            <A href="https://ceur-ws.org/Vol-3457">CEUR</A>.
+          </AlertDescription>
+        </Box>
+      </Alert>
       <Tags>
         <Tag icon="calendar-alt">September 19, 2022</Tag>
         <Tag icon="clock">10:00–16:00</Tag>
@@ -90,6 +98,10 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
       </P>
 
       <H2>Workshop Schedule</H2>
+      <P>
+        The proceedings are available at{" "}
+        <A href="https://ceur-ws.org/Vol-3457">CEUR</A>.
+      </P>
       <Table
         props={{ variant: "striped", size: "sm" }}
         columns={["Start", "End", "Event"]}
@@ -99,31 +111,39 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
             "10:10",
             "11:45",
             <>
-              <Text as="b">Session 1: Original Papers</Text>
+              <Text as="b">
+                <A href="https://ceur-ws.org/Vol-3457/preface_tmg.pdf">
+                  Session 1: Original Papers
+                </A>
+              </Text>
               <Papers wrapperProps={{ mt: 3 }}>
                 <Paper
                   title="German to English: Fake News Detection with Machine Translation"
                   authors={["Jin Liu", "Steffen Thoma"]}
                   slides={presentations["61"]}
                   preprint={papers["61"]}
+                  paper="https://ceur-ws.org/Vol-3457/short1tmg.pdf"
                 />
                 <Paper
                   title="Inductive Linking and Ranking in Knowledge Graphs of Varying Scale"
                   authors={["Felix Hamann", "Adrian Ulges", "Maurice Falk"]}
                   slides={presentations["78"]}
                   preprint={papers["78"]}
+                  paper="https://ceur-ws.org/Vol-3457/paper1tmg.pdf"
                 />
                 <Paper
                   title="Explaining Hatespeech Detection with Model-Agnostic Methods: A Case Study on Twitter Dataset"
                   authors={["Durgesh Nandini", "Ute Schmid"]}
                   slides={presentations["90"]}
                   preprint={papers["90"]}
+                  paper="https://ceur-ws.org/Vol-3457/paper2tmg.pdf"
                 />
                 <Paper
                   title="Comparing Unsupervised Algorithms to Construct Argument Graphs"
                   authors={["Mirko Lenz", "Premtim Sahitaj", "Lorik Dumani"]}
                   slides={presentations["91"]}
                   preprint={papers["91"]}
+                  paper="https://ceur-ws.org/Vol-3457/paper3tmg.pdf"
                 />
               </Papers>
             </>,
@@ -166,7 +186,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
                 <Paper
                   title="An End-to-end Model for Entity-level Relation Extraction using Multi-instance Learning"
                   authors={["Markus Eberts", "Adrian Ulges"]}
-                  paper="https://aclanthology.org/2021.eacl-main.319"
+                  paper="https://aclanthology.org/2021.eacl-main.319.pdf"
                 />
               </Papers>
             </>,
@@ -219,7 +239,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         disregarding their original submission format. The workshop is running a
         single-blind review process.
       </P>
-      <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
+      {/* <Stack direction={{ base: "column", md: "row" }} mt={5} mb={5}>
         <ButtonLink
           color="blue"
           icon="circle-check"
@@ -236,7 +256,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <ButtonLink icon="book" href="https://github.com/gi-ev/LNI">
           GI-LNI Template
         </ButtonLink>
-      </Stack>
+      </Stack> */}
 
       <H2>Important Dates</H2>
       <Table

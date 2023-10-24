@@ -29,7 +29,7 @@ export const Paper: React.FC<Props> = ({
     );
   }
 
-  if (preprint) {
+  if (preprint && !paper) {
     links.push(
       <Link href={preprint}>
         <Icon icon="file-lines" />

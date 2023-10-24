@@ -62,13 +62,6 @@ interface Props {
 }
 
 const Page: React.FC<PageProps<Props>> = ({ data }) => {
-  // const presentations = Object.fromEntries(
-  //   data.presentations.nodes.map((file) => [file.name, file.publicURL])
-  // );
-  const papers = Object.fromEntries(
-    data.papers.nodes.map((file) => [file.name, file.publicURL])
-  );
-
   return (
     <Layout title={TITLE}>
       {/* <Alert mt={10} mb={5} status="info">
@@ -99,7 +92,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
           <AlertTitle>Proceedings published</AlertTitle>
           <AlertDescription>
             The proceedings of our workshop are now available at{" "}
-            <A href="http://ceur-ws.org/Vol-3438">CEUR</A>.
+            <A href="https://ceur-ws.org/Vol-3438">CEUR</A>.
           </AlertDescription>
         </Box>
       </Alert>
@@ -166,7 +159,7 @@ const Page: React.FC<PageProps<Props>> = ({ data }) => {
         <A href="https://bear.wi2.uni-trier.de/">BEAR workshop</A>. Each
         accepted paper will have 15–20 minutes for presentation and 10 minutes
         for discussion. The proceedings are available at{" "}
-        <A href="http://ceur-ws.org/Vol-3438">CEUR</A>.
+        <A href="https://ceur-ws.org/Vol-3438">CEUR</A>.
       </P>
       <Table
         props={{ variant: "striped", size: "sm", mt: 5 }}
