@@ -70,6 +70,23 @@
   langid = {english}
 }
 
+@inproceedings{Britner2023AQUAPLANEArgumentQuality,
+  title = {{{AQUAPLANE}}: {{The Argument Quality Explainer App}}},
+  shorttitle = {{{AQUAPLANE}}},
+  booktitle = {Proceedings of the 32nd {{ACM International Conference}} on {{Information}} and {{Knowledge Management}}},
+  author = {Britner, Sebastian and Dumani, Lorik and Schenkel, Ralf},
+  date = {2023-10-21},
+  series = {{{CIKM}} '23},
+  pages = {5015--5020},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/3583780.3614733},
+  url = {https://dl.acm.org/doi/10.1145/3583780.3614733},
+  urldate = {2023-11-24},
+  abstract = {In computational argumentation, so-called quality dimensions such as coherence or rhetoric are often used for ranking arguments. However, the literature often only predicts which argument is more persuasive, but not why this is the case. In this paper, we introduce AQUAPLANE, a transparent and easy-to-extend application that not only decides for a pair of arguments which one is more convincing with respect to a statement, but also provides an explanation.},
+  isbn = {9798400701245}
+}
+
 @inproceedings{Dumani2019GoodPremisesRetrieval,
   title = {Good {{Premises Retrieval}} via a {{Two-Stage Argument Retrieval Model}}},
   booktitle = {Grundlagen von {{Datenbanken}}},
@@ -111,19 +128,6 @@
   langid = {english}
 }
 
-@inproceedings{Dumani2020QualityawareArgumentRetrieval,
-  title = {Quality-Aware {{Argument Retrieval}} with {{Topical Clustering}}},
-  booktitle = {Lernen. {{Wissen}}. {{Daten}}. {{Analysen}}. ({{LWDA}} 2020)},
-  author = {Dumani, Lorik and Kreutz, Christin and Biertz, Manuel and Witry, Alex and Schenkel, Ralf},
-  date = {2020},
-  volume = {2738},
-  pages = {23--34},
-  publisher = {{CEUR-WS.org}},
-  url = {http://ceur-ws.org/Vol-2738/LWDA2020_paper_24.pdf},
-  abstract = {A specialized approach to argument retrieval which combines both the general argumentative quality of texts, as well as the latent semantic (topic-)space of the document collection as boost factors to a general-purpose retrieval model to address the specific domain requirements of argument search. We present a specialized approach to argument retrieval which combines both the general argumentative quality of texts, as well as the latent semantic (topic-)space of the document collection as boost factors to a general-purpose retrieval model to address the specific domain requirements of argument search. This setup aims to satisfy our three hypothesized aspects of an argumentative information need: quality-aware result ranking, near-complete topical coverage, and text proximity to the query.},
-  eventtitle = {{{LWDA}}}
-}
-
 @inproceedings{Dumani2020QualityAwareRankingArguments,
   title = {Quality-{{Aware Ranking}} of {{Arguments}}},
   booktitle = {Proceedings of the 29th {{ACM International Conference}} on {{Information}} \& {{Knowledge Management}}},
@@ -149,6 +153,24 @@
   publisher = {{CEUR-WS.org}},
   url = {http://ceur-ws.org/Vol-2696/paper_174.pdf},
   abstract = {In this paper we describe our submissions to the CLEF lab Touché, which addresses argument retrieval from a focused debate collection. Our approach consists of a two-step retrieval. Step one finds the most similar claims to a query. Step two ranks the directly tied premises by the count of their convincingness compared to other relevant premises, for which we aggregate the sum of three main argument quality dimensions. The final ranking consists of the product of the two components which are expressed as probabilities.},
+  langid = {english}
+}
+
+@inproceedings{Dumani2020SegmentingClusteringNoisy,
+  title = {Segmenting and {{Clustering Noisy Arguments}}},
+  booktitle = {Proceedings of the {{Conference}} "{{Lernen}}, {{Wissen}}, {{Daten}}, {{Analysen}}"},
+  author = {Dumani, Lorik and Kreutz, Christin Katharina and Biertz, Manuel and Witry, Alex and Schenkel, Ralf},
+  editor = {Trabold, Daniel and Welke, Pascal and Piatkowski, Nico},
+  date = {2020-09-09},
+  series = {{{CEUR Workshop Proceedings}}},
+  volume = {2738},
+  pages = {23--34},
+  publisher = {{CEUR}},
+  location = {{Online, September}},
+  issn = {1613-0073},
+  url = {https://ceur-ws.org/Vol-2738/#paper24},
+  urldate = {2023-11-27},
+  eventtitle = {Lernen, {{Wissen}}, {{Daten}}, {{Analysen}} 2020},
   langid = {english}
 }
 
@@ -216,7 +238,7 @@
   eventtitle = {Computational {{Models}} of {{Argument}}}
 }
 
-@inproceedings{Lenz2022ComparingUnsupervisedAlgorithmsa,
+@inproceedings{Lenz2022ComparingUnsupervisedAlgorithms,
   title = {Comparing {{Unsupervised Algorithms}} to {{Construct Argument Graphs}}},
   booktitle = {Joint {{Proceedings}} of {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}} Co-Located with the 45rd {{German Conference}} on {{Artificial Intelligence}}},
   author = {Lenz, Mirko and Dumani, Lorik and Sahitaj, Premtim},
@@ -230,24 +252,6 @@
   url = {https://ceur-ws.org/Vol-3457/#paper3tmg},
   urldate = {2023-10-24},
   abstract = {Computational argumentation has gained considerable attention in recent years. Various areas have been addressed, such as extracting arguments from natural language texts into a structured form in order to store them in an argument base, determining stances for arguments with respect to topics, determination of inferences from statements, and much more. After so much progress has been made in the isolated tasks, in this paper we address the next level and aim to advance the automatic generation of argument graphs. To this end, we investigate various unsupervised methods for constructing the graphs and measure the performance with different metrics on three different datasets. Our implementation is publicly available on GitHub under the permissive MIT license.},
-  eventtitle = {{{KI}} 2022 {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}}},
-  langid = {english}
-}
-
-@inproceedings{Lenz2022WorkshopTextMining,
-  title = {{{Workshop}} on {{Text Mining}} and {{Generation}} ({{TMG}}): Preface},
-  booktitle = {Joint {{Proceedings}} of {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}} Co-Located with the 45rd {{German Conference}} on {{Artificial Intelligence}}},
-  author = {Lenz, Mirko and Dumani, Lorik and Sahitaj, Premtim},
-  editor = {Koert, Dorothea and Minor, Mirjam},
-  date = {2022-09-19},
-  series = {{{CEUR Workshop Proceedings}}},
-  volume = {3457},
-  publisher = {{CEUR}},
-  location = {{Virtual Event, Trier}},
-  issn = {1613-0073},
-  url = {https://ceur-ws.org/Vol-3457/#preface_tmg},
-  urldate = {2023-10-24},
-  abstract = {This paper is a report on the first Text Mining and Generation Workshop (TMG), which was a one-day virtual event hosted at the German Conference on Artificial Intelligence (KI 2022) in Trier, Germany. In addition to four accepted original papers, there were three invited talks by speakers who presented their works already published at high-ranked conferences as well as one keynote by a pioneer in the two research fields relevant to the workshop.},
   eventtitle = {{{KI}} 2022 {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}}},
   langid = {english}
 }
@@ -266,6 +270,24 @@
   url = {https://ebooks.iospress.nl/doi/10.3233/FAIA220176},
   urldate = {2022-09-14},
   abstract = {Existing tools to create argument graphs are tailored for experts in the domain of argumentation. By taking into account the needs of experts, laymen, and developers, we propose ArgueMapper as a novel argument diagramming tool and Arguebuf as its underlying format. ArgueMapper is the first of its kind to be optimized for mobile devices and provide a discoverable interface suitable for novice users. Arguebuf provides native implementations for all major programming languages via a code generation approach. To complement Arguebuf, we provide a supercharged Python implementation that enables advanced analysis. All of our contributions support AIF and are publicly available on GitHub under the MIT license.}
+}
+
+@inproceedings{Lenz2022WorkshopTextMining,
+  title = {Workshop on {{Text Mining}} and {{Generation}} ({{TMG}}): {{Preface}}},
+  booktitle = {Joint {{Proceedings}} of {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}} Co-Located with the 45rd {{German Conference}} on {{Artificial Intelligence}}},
+  author = {Lenz, Mirko and Dumani, Lorik and Sahitaj, Premtim},
+  editor = {Koert, Dorothea and Minor, Mirjam},
+  date = {2022-09-19},
+  series = {{{CEUR Workshop Proceedings}}},
+  volume = {3457},
+  publisher = {{CEUR}},
+  location = {{Virtual Event, Trier}},
+  issn = {1613-0073},
+  url = {https://ceur-ws.org/Vol-3457/#preface_tmg},
+  urldate = {2023-10-24},
+  abstract = {This paper is a report on the first Text Mining and Generation Workshop (TMG), which was a one-day virtual event hosted at the German Conference on Artificial Intelligence (KI 2022) in Trier, Germany. In addition to four accepted original papers, there were three invited talks by speakers who presented their works already published at high-ranked conferences as well as one keynote by a pioneer in the two research fields relevant to the workshop.},
+  eventtitle = {{{KI}} 2022 {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}}},
+  langid = {english}
 }
 
 @inproceedings{Lenz2023CaseBasedAdaptationArgument,
