@@ -66,6 +66,7 @@
   doi = {10.1007/978-3-030-30179-8_8},
   url = {http://link.springer.com/10.1007/978-3-030-30179-8_8},
   urldate = {2022-01-03},
+  abstract = {Research on argumentation in Artificial Intelligence recently investigates new methods that contribute to the vision of developing robust argumentation machines. One line of research explores ways of reasoning with natural language arguments coming from information sources on the web as a foundation for the deliberation and synthesis of arguments in specific domains. This paper builds upon arguments represented as argument graphs in the standardized Argument Interchange Format. While previous work was focused on the development of semantic similarity measures used for the case-based retrieval of argument graphs, this paper addresses the problem of clustering argument graphs to explore structures that facilitate argumentation interpretation. We propose a k-medoid and an agglomerative clustering approach based on semantic similarity measures. We compare the clustering results based on a graph-based semantic measure that takes the structure of the argument into account with a semantic word2vec measure on the pure textual argument representation. Experiments based on the Microtext corpus show that the graph-based similarity is best on internal evaluation measures, while the pure textual measure performs very well for identifying topic-specific clusters.},
   isbn = {978-3-030-30178-1 978-3-030-30179-8},
   langid = {english}
 }
@@ -170,6 +171,7 @@
   issn = {1613-0073},
   url = {https://ceur-ws.org/Vol-2738/#paper24},
   urldate = {2023-11-27},
+  abstract = {Automated argument retrieval for queries is desirable, e.g., as it helps in decision making or convincing others of certain actions. An argument consists of a claim supported or attacked by at least one premise. The claim describes a controversial viewpoint that should not be accepted without evidence given by premises. Premises are composed of Elementary Discourse Units (EDUs) which are their smallest contextual components. Oftentimes argument search engines find similar claims to a query first before returning their premises. Due to heterogeneous data sources, premises often appear repeatedly in different syntactic forms. From an information retrieval perspective, it is essential to rank premises relevant for a query claim highly in a duplicate-free manner. The main challenge in clustering them is to avoid redundancies as premises frequently address various aspects, i.e., consist of multiple EDUs. So, two tasks can be defined: segmentation of premises in EDUs and clustering of similar EDUs. In this paper we make two contributions: Our first contribution is the introduction of a noisy dataset with 480 premises for 30 queries crawled from debate portals which serves as a gold standard for the segmentation of premises into EDUs and the clustering of EDUs. Our second contribution consists of first baselines for the two mentioned tasks, for which we evaluated various methods. Our results show that an uncurated dataset is a major challenge and that clustering EDUs is only reasonable with premises as context information.},
   eventtitle = {Lernen, {{Wissen}}, {{Daten}}, {{Analysen}} 2020},
   langid = {english}
 }
@@ -275,7 +277,7 @@
 @inproceedings{Lenz2022WorkshopTextMining,
   title = {Workshop on {{Text Mining}} and {{Generation}} ({{TMG}}): {{Preface}}},
   booktitle = {Joint {{Proceedings}} of {{Workshops}}, {{Tutorials}} and {{Doctoral Consortium}} Co-Located with the 45rd {{German Conference}} on {{Artificial Intelligence}}},
-  author = {Lenz, Mirko and Dumani, Lorik and Sahitaj, Premtim},
+  author = {Lenz, Mirko and Dumani, Lorik and Bondarenko, Alexander and Syed, Shahbaz},
   editor = {Koert, Dorothea and Minor, Mirjam},
   date = {2022-09-19},
   series = {{{CEUR Workshop Proceedings}}},
@@ -339,6 +341,7 @@
   issn = {1613-0073},
   url = {https://ceur-ws.org/Vol-3438/#paper_09},
   urldate = {2023-07-31},
+  abstract = {Nowadays, information on any topic can be researched on the Internet. However, in addition to reputable news sources, there is also a great deal of fake news that is disseminated, e.g., via social media or in established newspapers. Thus, the veracity must be assessed for each piece of information. People, parties, and organizations want to push through their interests and sometimes do not hesitate to spread fake news. For some time now, one popular means has been to quote (supposed) experts in a field. For example, —due to his authority— Albert Einstein is often quoted by believers in God although he was primarily concerned with physics while his quotes on God are taken out of context. In this paper, we define a new task of expert suitability prediction and evaluate methods to assess the credibility of a person with reference to a statement and its context and compare it to state-of-the-art approaches applying transformer-based embeddings. In an R4 cycle in CBR this approach could be used for the ranking. In this pilot study, we restrict our experiments to researchers, which allows us to derive their expertise from their publications. Furthermore, we make a manually labeled dataset consisting of 1,700 (statement,expert) pairs where suitable experts were tediously searched out together with valuable context information (such as convincing text parts of the experts’ contexts towards a statement) publicly available to stimulate further research in this very important, but up to now underrepresented area of fake news detection.},
   eventtitle = {{{ICCBR}} 2023 {{Workshop Proceedings}}},
   langid = {english}
 }
@@ -370,6 +373,7 @@
   issn = {1613-0073},
   url = {https://ceur-ws.org/Vol-3438/#paper_10},
   urldate = {2023-07-31},
+  abstract = {Podcasts have emerged as a significant platform for the exchange of ideas, opinions, and knowledge on a variety of topics. At the same time, the extraction of arguments (called: argument mining) has received great attention. However, to the best of our knowledge, there exist no work that investigates the extraction of arguments from podcasts. One reason can be that podcasts often involve unpredictable and complex argument structures, and extracting valuable insights from them is challenging. In this work, we present the novel approach of extracting two different types of argumentative structures from podcast after transcribing them, i.e., (1) a simple but often used variant describing arguments as consisting of only a claim and a premise, where the claim describes the standpoint and the premise the reason to support or attack that claim and (2) an extended variant where an argument comprises premises, a main claim, counterarguments, and rebuttals. For this purpose, we utilize two specially designed prompts and OpenAI’s GPT-4 language model. For our test data, we chose three podcasts considering current computational constraints and the need for diversity in topics and discussion styles. Our evaluation shows the high feasibility of extracting arguments from podcasts using ChatGPT. We publish the podcasts’ transcripts as well as the extracted arguments.},
   eventtitle = {{{ICCBR}} 2023 {{Workshop Proceedings}}},
   langid = {english}
 }
