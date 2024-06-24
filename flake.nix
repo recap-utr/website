@@ -8,7 +8,7 @@
       flake = false;
     };
     flocken = {
-      url = "github:mirkolenz/flocken/v1";
+      url = "github:mirkolenz/flocken/v2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -55,13 +55,14 @@
           '';
         in
         {
-          apps.dockerManifest = {
+          apps.docker-manifest = {
             type = "app";
             program = lib.getExe (
               flocken.legacyPackages.${system}.mkDockerManifest {
-                branch = builtins.getEnv "GITHUB_REF_NAME";
-                name = "ghcr.io/" + builtins.getEnv "GITHUB_REPOSITORY";
-                version = builtins.getEnv "VERSION";
+                github = {
+                  enable = true;
+                  token = "$GH_TOKEN";
+                };
                 images = with self.packages; [ x86_64-linux.docker ];
               }
             );
