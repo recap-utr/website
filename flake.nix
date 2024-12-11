@@ -55,17 +55,12 @@
           '';
         in
         {
-          apps.docker-manifest = {
-            type = "app";
-            program = lib.getExe (
-              flocken.legacyPackages.${system}.mkDockerManifest {
-                github = {
-                  enable = true;
-                  token = "$GH_TOKEN";
-                };
-                images = with self.packages; [ x86_64-linux.docker ];
-              }
-            );
+          apps.docker-manifest.program = flocken.legacyPackages.${system}.mkDockerManifest {
+            github = {
+              enable = true;
+              token = "$GH_TOKEN";
+            };
+            images = with self.packages; [ x86_64-linux.docker ];
           };
           devShells.default = pkgs.mkShell {
             shellHook = ''
