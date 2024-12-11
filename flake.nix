@@ -3,10 +3,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     systems.url = "github:nix-systems/default";
-    npmlock2nix = {
-      url = "github:nix-community/npmlock2nix";
-      flake = false;
-    };
     flocken = {
       url = "github:mirkolenz/flocken/v2";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,8 +27,9 @@
           ...
         }:
         let
-          nodejs = pkgs.nodejs_18;
-          npmlock2nix = import inputs.npmlock2nix { inherit pkgs; };
+          npmDeps = pkgs.importNpmLock {
+            npmRoot = ./.;
+          };
           rewrites = lib.mapAttrsToList (
             source: target: "redir ${source} ${target} permanent"
           ) (import ./rewrites.nix);
@@ -55,6 +52,14 @@
           '';
         in
         {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              (final: prev: {
+                nodejs = final.nodejs_18;
+              })
+            ];
+          };
           apps.docker-manifest.program = flocken.legacyPackages.${system}.mkDockerManifest {
             github = {
               enable = true;
@@ -64,27 +69,30 @@
           };
           devShells.default = pkgs.mkShell {
             shellHook = ''
-              ${lib.getExe' nodejs "npm"} install
+              ${lib.getExe' pkgs.nodejs "npm"} install
             '';
-            packages = [ nodejs ];
+            packages = [ pkgs.nodejs ];
           };
           packages = {
-            default = npmlock2nix.v2.build {
+            default = pkgs.buildNpmPackage {
+              inherit npmDeps;
+              inherit (npmDeps) pname version;
+              inherit (pkgs.importNpmLock) npmConfigHook;
               src = ./.;
-              installPhase = "cp -r public/. $out";
-              HOME = "$(${pkgs.coreutils}/bin/mktemp -d)";
-              buildCommands = [ "npm run build" ];
-              # https://github.com/gatsbyjs/gatsby/issues/19555
-              node_modules_mode = "copy";
-              node_modules_attrs = {
-                inherit nodejs;
-                # https://github.com/nix-community/npmlock2nix/issues/185
-                buildInputs = with pkgs; [ vips ];
-                nativeBuildInputs = with pkgs; [
-                  pkg-config
-                  python3
-                ];
-              };
+              npmFlags = [ "--legacy-peer-deps" ];
+              installPhase = ''
+                runHook preInstall
+
+                mkdir -p "$out"
+                cp -r "public/." "$out"
+
+                runHook postInstall
+              '';
+              buildInputs = with pkgs; [ vips ];
+              nativeBuildInputs = with pkgs; [
+                pkg-config
+                nodejs.passthru.python
+              ];
             };
             server = pkgs.writeShellApplication {
               name = "server";
@@ -96,13 +104,26 @@
               name = "recap-website";
               tag = "latest";
               created = "now";
-              contents = [ pkgs.dockerTools.fakeNss ];
+              contents = with pkgs; [
+                dockerTools.fakeNss
+                cacert
+                tzdata
+              ];
+              extraCommands = ''
+                mkdir -m 1777 tmp
+              '';
               config = {
-                entrypoint = [ (lib.getExe self'.packages.server) ];
-                exposedPorts = {
+                Entrypoint = [ (lib.getExe self'.packages.server) ];
+                ExposedPorts = {
                   "${caddyport}/tcp" = { };
                 };
-                user = "nobody:nobody";
+                User = "nobody:nobody";
+                Env = [
+                  "XDG_CONFIG_HOME=/config"
+                  "XDG_DATA_HOME=/data"
+                  "HOME=/root"
+                ];
+                WorkingDir = "/srv";
               };
             };
           };
